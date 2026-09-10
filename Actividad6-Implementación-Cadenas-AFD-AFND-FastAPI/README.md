@@ -1,9 +1,9 @@
 # Actividad 6. Implementación de AFD y AFND
 
 **Nombre de la actividad:** Actividad 6. Implementación de AFD y AFND  
-**Materia:** Lenguajes Computacionales
 
-## Equipo de trabajo
+
+## Equipo
 
 | Nombre completo | No. de cuenta |
 |---|---|
