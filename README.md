@@ -18,6 +18,19 @@ las peticiones y los resultados.
 
 > La Actividad 6 se desarrolló en equipo con Camila Rodriguez Rosas (194100).
 
+### Endpoints por actividad
+
+Todos los endpoints reciben y devuelven JSON (`POST`), y cada API expone además
+`GET /` como verificación de estado (`{"status": "ok"}`).
+
+| Actividad | Endpoints |
+|---|---|
+| 3 | `/cadenas/concatenar`, `/cadenas/unir`, `/cadenas/potencia` |
+| 3 | `/lenguajes/union`, `/lenguajes/interseccion`, `/lenguajes/diferencia`, `/lenguajes/concatenacion`, `/lenguajes/complemento`, `/lenguajes/clausura_kleene` |
+| 6 | `/afd/evaluar`, `/afnd/evaluar` |
+
+El formato exacto de cada petición y respuesta está en el README de cada actividad.
+
 ## Estructura
 
 Las dos actividades comparten la misma organización:
@@ -51,15 +64,22 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 
 # Ejecutar el notebook con el desarrollo de los ejercicios
+jupyter nbconvert --execute --to notebook --inplace notebooks/ejercicios.ipynb
+# o abrirlo interactivamente:
 jupyter notebook notebooks/ejercicios.ipynb
 ```
 
 Con la API levantada, `/docs` ofrece la interfaz de Swagger para probar cada
 endpoint sin escribir código.
 
+El notebook **no necesita** el servidor levantado: usa el `TestClient` de FastAPI,
+que llama a los mismos endpoints en memoria (importa `main` desde la carpeta
+superior con `sys.path.append("..")`).
+
 ## Tecnologías
 
-- **Python 3.13+**
+- **Python 3.10+** (se usa la sintaxis de tipos `X | None`; probado con 3.14)
 - **FastAPI** + **Uvicorn** — API y servidor de desarrollo
 - **Pydantic** — validación de las peticiones
 - **Jupyter** — notebooks con el desarrollo de los ejercicios
+- **httpx** — requerido por el `TestClient` de FastAPI que usan los notebooks
