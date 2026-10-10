@@ -1,0 +1,4353 @@
+{
+  "pruebas": {
+    "grafo-10": {
+      "A->J": {
+        "euclidiana": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.02286 · distancia_euclidiana(n, J)",
+              "escala": 0.022863
+            },
+            "origen": "A",
+            "destino": "J",
+            "limite_nodos": 8,
+            "nodos_visitados": 5,
+            "solucion": true,
+            "ruta": [
+              "A",
+              "C",
+              "E",
+              "I",
+              "J"
+            ],
+            "costo": 75.0,
+            "motivo": "Se llegó a J con costo 75.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 4,
+              "cota": 81,
+              "nodos_generados": 9,
+              "tiempo_ms": 0.0155
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 4,
+              "cota": 81,
+              "max_frontera": 5,
+              "max_nodos_en_memoria": 9
+            },
+            "traza": [
+              {
+                "nodo": "A",
+                "g": 0.0,
+                "h": 31.1337,
+                "f": 31.1337
+              },
+              {
+                "nodo": "C",
+                "g": 22.0,
+                "h": 22.7744,
+                "f": 22.7744
+              },
+              {
+                "nodo": "E",
+                "g": 42.0,
+                "h": 15.1704,
+                "f": 15.1704
+              },
+              {
+                "nodo": "I",
+                "g": 67.0,
+                "h": 7.2882,
+                "f": 7.2882
+              },
+              {
+                "nodo": "J",
+                "g": 75.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.02286 · distancia_euclidiana(n, J)",
+              "escala": 0.022863
+            },
+            "origen": "A",
+            "destino": "J",
+            "limite_nodos": 8,
+            "nodos_visitados": 7,
+            "solucion": true,
+            "ruta": [
+              "A",
+              "B",
+              "F",
+              "I",
+              "J"
+            ],
+            "costo": 56.0,
+            "motivo": "Se llegó a J con costo 56.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 4,
+              "cota": 81,
+              "nodos_generados": 11,
+              "tiempo_ms": 0.0172
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 4,
+              "cota": 81,
+              "max_frontera": 4,
+              "max_nodos_en_memoria": 10
+            },
+            "traza": [
+              {
+                "nodo": "A",
+                "g": 0.0,
+                "h": 31.1337,
+                "f": 31.1337
+              },
+              {
+                "nodo": "B",
+                "g": 15.0,
+                "h": 27.6404,
+                "f": 42.6404
+              },
+              {
+                "nodo": "D",
+                "g": 10.0,
+                "h": 32.8403,
+                "f": 42.8403
+              },
+              {
+                "nodo": "C",
+                "g": 22.0,
+                "h": 22.7744,
+                "f": 44.7744
+              },
+              {
+                "nodo": "F",
+                "g": 33.0,
+                "h": 19.7138,
+                "f": 52.7138
+              },
+              {
+                "nodo": "I",
+                "g": 48.0,
+                "h": 7.2882,
+                "f": 55.2882
+              },
+              {
+                "nodo": "J",
+                "g": 56.0,
+                "h": 0.0,
+                "f": 56.0
+              }
+            ]
+          }
+        },
+        "saltos": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 8 · saltos(n, J)",
+              "escala": 8.0
+            },
+            "origen": "A",
+            "destino": "J",
+            "limite_nodos": 8,
+            "nodos_visitados": 4,
+            "solucion": true,
+            "ruta": [
+              "A",
+              "D",
+              "G",
+              "J"
+            ],
+            "costo": 90.0,
+            "motivo": "Se llegó a J con costo 90.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 4,
+              "cota": 81,
+              "nodos_generados": 8,
+              "tiempo_ms": 0.0074
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 4,
+              "cota": 81,
+              "max_frontera": 5,
+              "max_nodos_en_memoria": 8
+            },
+            "traza": [
+              {
+                "nodo": "A",
+                "g": 0.0,
+                "h": 24.0,
+                "f": 24.0
+              },
+              {
+                "nodo": "D",
+                "g": 10.0,
+                "h": 16.0,
+                "f": 16.0
+              },
+              {
+                "nodo": "G",
+                "g": 40.0,
+                "h": 8.0,
+                "f": 8.0
+              },
+              {
+                "nodo": "J",
+                "g": 90.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 8 · saltos(n, J)",
+              "escala": 8.0
+            },
+            "origen": "A",
+            "destino": "J",
+            "limite_nodos": 8,
+            "nodos_visitados": 8,
+            "solucion": true,
+            "ruta": [
+              "A",
+              "B",
+              "F",
+              "I",
+              "J"
+            ],
+            "costo": 56.0,
+            "motivo": "Se llegó a J con costo 56.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 4,
+              "cota": 81,
+              "nodos_generados": 13,
+              "tiempo_ms": 0.0149
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 4,
+              "cota": 81,
+              "max_frontera": 4,
+              "max_nodos_en_memoria": 10
+            },
+            "traza": [
+              {
+                "nodo": "A",
+                "g": 0.0,
+                "h": 24.0,
+                "f": 24.0
+              },
+              {
+                "nodo": "D",
+                "g": 10.0,
+                "h": 16.0,
+                "f": 26.0
+              },
+              {
+                "nodo": "C",
+                "g": 22.0,
+                "h": 16.0,
+                "f": 38.0
+              },
+              {
+                "nodo": "B",
+                "g": 15.0,
+                "h": 24.0,
+                "f": 39.0
+              },
+              {
+                "nodo": "G",
+                "g": 40.0,
+                "h": 8.0,
+                "f": 48.0
+              },
+              {
+                "nodo": "F",
+                "g": 33.0,
+                "h": 16.0,
+                "f": 49.0
+              },
+              {
+                "nodo": "I",
+                "g": 48.0,
+                "h": 8.0,
+                "f": 56.0
+              },
+              {
+                "nodo": "J",
+                "g": 56.0,
+                "h": 0.0,
+                "f": 56.0
+              }
+            ]
+          }
+        }
+      },
+      "D->J": {
+        "euclidiana": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.02286 · distancia_euclidiana(n, J)",
+              "escala": 0.022863
+            },
+            "origen": "D",
+            "destino": "J",
+            "limite_nodos": 8,
+            "nodos_visitados": 3,
+            "solucion": true,
+            "ruta": [
+              "D",
+              "G",
+              "J"
+            ],
+            "costo": 80.0,
+            "motivo": "Se llegó a J con costo 80.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 2,
+              "profundidad": 3,
+              "cota": 8,
+              "nodos_generados": 5,
+              "tiempo_ms": 0.0055
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 2,
+              "profundidad": 3,
+              "cota": 8,
+              "max_frontera": 3,
+              "max_nodos_en_memoria": 5
+            },
+            "traza": [
+              {
+                "nodo": "D",
+                "g": 0.0,
+                "h": 32.8403,
+                "f": 32.8403
+              },
+              {
+                "nodo": "G",
+                "g": 30.0,
+                "h": 16.0205,
+                "f": 16.0205
+              },
+              {
+                "nodo": "J",
+                "g": 80.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.02286 · distancia_euclidiana(n, J)",
+              "escala": 0.022863
+            },
+            "origen": "D",
+            "destino": "J",
+            "limite_nodos": 8,
+            "nodos_visitados": 5,
+            "solucion": true,
+            "ruta": [
+              "D",
+              "G",
+              "I",
+              "J"
+            ],
+            "costo": 48.0,
+            "motivo": "Se llegó a J con costo 48.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 2,
+              "profundidad": 3,
+              "cota": 8,
+              "nodos_generados": 7,
+              "tiempo_ms": 0.0078
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 2,
+              "profundidad": 3,
+              "cota": 8,
+              "max_frontera": 3,
+              "max_nodos_en_memoria": 6
+            },
+            "traza": [
+              {
+                "nodo": "D",
+                "g": 0.0,
+                "h": 32.8403,
+                "f": 32.8403
+              },
+              {
+                "nodo": "G",
+                "g": 30.0,
+                "h": 16.0205,
+                "f": 46.0205
+              },
+              {
+                "nodo": "I",
+                "g": 40.0,
+                "h": 7.2882,
+                "f": 47.2882
+              },
+              {
+                "nodo": "F",
+                "g": 28.0,
+                "h": 19.7138,
+                "f": 47.7138
+              },
+              {
+                "nodo": "J",
+                "g": 48.0,
+                "h": 0.0,
+                "f": 48.0
+              }
+            ]
+          }
+        },
+        "saltos": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 8 · saltos(n, J)",
+              "escala": 8.0
+            },
+            "origen": "D",
+            "destino": "J",
+            "limite_nodos": 8,
+            "nodos_visitados": 3,
+            "solucion": true,
+            "ruta": [
+              "D",
+              "G",
+              "J"
+            ],
+            "costo": 80.0,
+            "motivo": "Se llegó a J con costo 80.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 2,
+              "profundidad": 3,
+              "cota": 8,
+              "nodos_generados": 5,
+              "tiempo_ms": 0.0047
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 2,
+              "profundidad": 3,
+              "cota": 8,
+              "max_frontera": 3,
+              "max_nodos_en_memoria": 5
+            },
+            "traza": [
+              {
+                "nodo": "D",
+                "g": 0.0,
+                "h": 16.0,
+                "f": 16.0
+              },
+              {
+                "nodo": "G",
+                "g": 30.0,
+                "h": 8.0,
+                "f": 8.0
+              },
+              {
+                "nodo": "J",
+                "g": 80.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 8 · saltos(n, J)",
+              "escala": 8.0
+            },
+            "origen": "D",
+            "destino": "J",
+            "limite_nodos": 8,
+            "nodos_visitados": 5,
+            "solucion": true,
+            "ruta": [
+              "D",
+              "G",
+              "I",
+              "J"
+            ],
+            "costo": 48.0,
+            "motivo": "Se llegó a J con costo 48.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 2,
+              "profundidad": 3,
+              "cota": 8,
+              "nodos_generados": 7,
+              "tiempo_ms": 0.0097
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 2,
+              "profundidad": 3,
+              "cota": 8,
+              "max_frontera": 3,
+              "max_nodos_en_memoria": 6
+            },
+            "traza": [
+              {
+                "nodo": "D",
+                "g": 0.0,
+                "h": 16.0,
+                "f": 16.0
+              },
+              {
+                "nodo": "G",
+                "g": 30.0,
+                "h": 8.0,
+                "f": 38.0
+              },
+              {
+                "nodo": "F",
+                "g": 28.0,
+                "h": 16.0,
+                "f": 44.0
+              },
+              {
+                "nodo": "I",
+                "g": 40.0,
+                "h": 8.0,
+                "f": 48.0
+              },
+              {
+                "nodo": "J",
+                "g": 48.0,
+                "h": 0.0,
+                "f": 48.0
+              }
+            ]
+          }
+        }
+      },
+      "B->H": {
+        "euclidiana": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.02286 · distancia_euclidiana(n, H)",
+              "escala": 0.022863
+            },
+            "origen": "B",
+            "destino": "H",
+            "limite_nodos": 8,
+            "nodos_visitados": 3,
+            "solucion": true,
+            "ruta": [
+              "B",
+              "E",
+              "H"
+            ],
+            "costo": 47.0,
+            "motivo": "Se llegó a H con costo 47.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 2,
+              "profundidad": 3,
+              "cota": 8,
+              "nodos_generados": 5,
+              "tiempo_ms": 0.0048
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 2,
+              "profundidad": 3,
+              "cota": 8,
+              "max_frontera": 3,
+              "max_nodos_en_memoria": 5
+            },
+            "traza": [
+              {
+                "nodo": "B",
+                "g": 0.0,
+                "h": 36.2369,
+                "f": 36.2369
+              },
+              {
+                "nodo": "E",
+                "g": 35.0,
+                "h": 7.159,
+                "f": 7.159
+              },
+              {
+                "nodo": "H",
+                "g": 47.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.02286 · distancia_euclidiana(n, H)",
+              "escala": 0.022863
+            },
+            "origen": "B",
+            "destino": "H",
+            "limite_nodos": 8,
+            "nodos_visitados": 3,
+            "solucion": true,
+            "ruta": [
+              "B",
+              "E",
+              "H"
+            ],
+            "costo": 47.0,
+            "motivo": "Se llegó a H con costo 47.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 2,
+              "profundidad": 2,
+              "cota": 4,
+              "nodos_generados": 5,
+              "tiempo_ms": 0.0061
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 2,
+              "profundidad": 2,
+              "cota": 4,
+              "max_frontera": 3,
+              "max_nodos_en_memoria": 5
+            },
+            "traza": [
+              {
+                "nodo": "B",
+                "g": 0.0,
+                "h": 36.2369,
+                "f": 36.2369
+              },
+              {
+                "nodo": "E",
+                "g": 35.0,
+                "h": 7.159,
+                "f": 42.159
+              },
+              {
+                "nodo": "H",
+                "g": 47.0,
+                "h": 0.0,
+                "f": 47.0
+              }
+            ]
+          }
+        },
+        "saltos": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 8 · saltos(n, H)",
+              "escala": 8.0
+            },
+            "origen": "B",
+            "destino": "H",
+            "limite_nodos": 8,
+            "nodos_visitados": 3,
+            "solucion": true,
+            "ruta": [
+              "B",
+              "F",
+              "H"
+            ],
+            "costo": 58.0,
+            "motivo": "Se llegó a H con costo 58.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 2,
+              "profundidad": 3,
+              "cota": 8,
+              "nodos_generados": 5,
+              "tiempo_ms": 0.0047
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 2,
+              "profundidad": 3,
+              "cota": 8,
+              "max_frontera": 3,
+              "max_nodos_en_memoria": 5
+            },
+            "traza": [
+              {
+                "nodo": "B",
+                "g": 0.0,
+                "h": 16.0,
+                "f": 16.0
+              },
+              {
+                "nodo": "F",
+                "g": 18.0,
+                "h": 8.0,
+                "f": 8.0
+              },
+              {
+                "nodo": "H",
+                "g": 58.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 8 · saltos(n, H)",
+              "escala": 8.0
+            },
+            "origen": "B",
+            "destino": "H",
+            "limite_nodos": 8,
+            "nodos_visitados": 4,
+            "solucion": true,
+            "ruta": [
+              "B",
+              "E",
+              "H"
+            ],
+            "costo": 47.0,
+            "motivo": "Se llegó a H con costo 47.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 2,
+              "profundidad": 2,
+              "cota": 4,
+              "nodos_generados": 6,
+              "tiempo_ms": 0.0074
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 2,
+              "profundidad": 2,
+              "cota": 4,
+              "max_frontera": 3,
+              "max_nodos_en_memoria": 5
+            },
+            "traza": [
+              {
+                "nodo": "B",
+                "g": 0.0,
+                "h": 16.0,
+                "f": 16.0
+              },
+              {
+                "nodo": "F",
+                "g": 18.0,
+                "h": 8.0,
+                "f": 26.0
+              },
+              {
+                "nodo": "E",
+                "g": 35.0,
+                "h": 8.0,
+                "f": 43.0
+              },
+              {
+                "nodo": "H",
+                "g": 47.0,
+                "h": 0.0,
+                "f": 47.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    "grafo-25": {
+      "A->Y": {
+        "euclidiana": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.01629 · distancia_euclidiana(n, Y)",
+              "escala": 0.016286
+            },
+            "origen": "A",
+            "destino": "Y",
+            "limite_nodos": 20,
+            "nodos_visitados": 7,
+            "solucion": true,
+            "ruta": [
+              "A",
+              "D",
+              "F",
+              "M",
+              "R",
+              "U",
+              "Y"
+            ],
+            "costo": 160.0,
+            "motivo": "Se llegó a Y con costo 160.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 12,
+              "cota": 531441,
+              "nodos_generados": 15,
+              "tiempo_ms": 0.0106
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 12,
+              "cota": 531441,
+              "max_frontera": 9,
+              "max_nodos_en_memoria": 15
+            },
+            "traza": [
+              {
+                "nodo": "A",
+                "g": 0.0,
+                "h": 26.5293,
+                "f": 26.5293
+              },
+              {
+                "nodo": "D",
+                "g": 36.0,
+                "h": 22.2153,
+                "f": 22.2153
+              },
+              {
+                "nodo": "F",
+                "g": 61.0,
+                "h": 17.6699,
+                "f": 17.6699
+              },
+              {
+                "nodo": "M",
+                "g": 93.0,
+                "h": 13.2565,
+                "f": 13.2565
+              },
+              {
+                "nodo": "R",
+                "g": 125.0,
+                "h": 8.8431,
+                "f": 8.8431
+              },
+              {
+                "nodo": "U",
+                "g": 141.0,
+                "h": 4.9453,
+                "f": 4.9453
+              },
+              {
+                "nodo": "Y",
+                "g": 160.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.01629 · distancia_euclidiana(n, Y)",
+              "escala": 0.016286
+            },
+            "origen": "A",
+            "destino": "Y",
+            "limite_nodos": 20,
+            "nodos_visitados": 18,
+            "solucion": true,
+            "ruta": [
+              "A",
+              "D",
+              "F",
+              "K",
+              "R",
+              "U",
+              "Y"
+            ],
+            "costo": 115.0,
+            "motivo": "Se llegó a Y con costo 115.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 6,
+              "cota": 729,
+              "nodos_generados": 24,
+              "tiempo_ms": 0.0266
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 6,
+              "cota": 729,
+              "max_frontera": 9,
+              "max_nodos_en_memoria": 22
+            },
+            "traza": [
+              {
+                "nodo": "A",
+                "g": 0.0,
+                "h": 26.5293,
+                "f": 26.5293
+              },
+              {
+                "nodo": "D",
+                "g": 36.0,
+                "h": 22.2153,
+                "f": 58.2153
+              },
+              {
+                "nodo": "B",
+                "g": 40.0,
+                "h": 23.11,
+                "f": 63.11
+              },
+              {
+                "nodo": "E",
+                "g": 48.0,
+                "h": 22.212,
+                "f": 70.212
+              },
+              {
+                "nodo": "I",
+                "g": 53.0,
+                "h": 18.2287,
+                "f": 71.2287
+              },
+              {
+                "nodo": "F",
+                "g": 61.0,
+                "h": 17.6699,
+                "f": 78.6699
+              },
+              {
+                "nodo": "M",
+                "g": 70.0,
+                "h": 13.2565,
+                "f": 83.2565
+              },
+              {
+                "nodo": "K",
+                "g": 71.0,
+                "h": 13.9978,
+                "f": 84.9978
+              },
+              {
+                "nodo": "G",
+                "g": 70.0,
+                "h": 18.2327,
+                "f": 88.2327
+              },
+              {
+                "nodo": "R",
+                "g": 80.0,
+                "h": 8.8431,
+                "f": 88.8431
+              },
+              {
+                "nodo": "U",
+                "g": 96.0,
+                "h": 4.9453,
+                "f": 100.9453
+              },
+              {
+                "nodo": "O",
+                "g": 87.0,
+                "h": 13.9926,
+                "f": 100.9926
+              },
+              {
+                "nodo": "C",
+                "g": 82.0,
+                "h": 23.0957,
+                "f": 105.0957
+              },
+              {
+                "nodo": "H",
+                "g": 86.0,
+                "h": 19.8253,
+                "f": 105.8253
+              },
+              {
+                "nodo": "N",
+                "g": 95.0,
+                "h": 16.0172,
+                "f": 111.0172
+              },
+              {
+                "nodo": "V",
+                "g": 108.0,
+                "h": 4.9601,
+                "f": 112.9601
+              },
+              {
+                "nodo": "S",
+                "g": 105.0,
+                "h": 9.9199,
+                "f": 114.9199
+              },
+              {
+                "nodo": "Y",
+                "g": 115.0,
+                "h": 0.0,
+                "f": 115.0
+              }
+            ]
+          }
+        },
+        "saltos": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 5 · saltos(n, Y)",
+              "escala": 5.0
+            },
+            "origen": "A",
+            "destino": "Y",
+            "limite_nodos": 20,
+            "nodos_visitados": 7,
+            "solucion": true,
+            "ruta": [
+              "A",
+              "D",
+              "I",
+              "M",
+              "R",
+              "U",
+              "Y"
+            ],
+            "costo": 142.0,
+            "motivo": "Se llegó a Y con costo 142.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 12,
+              "cota": 531441,
+              "nodos_generados": 14,
+              "tiempo_ms": 0.0099
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 12,
+              "cota": 531441,
+              "max_frontera": 8,
+              "max_nodos_en_memoria": 14
+            },
+            "traza": [
+              {
+                "nodo": "A",
+                "g": 0.0,
+                "h": 30.0,
+                "f": 30.0
+              },
+              {
+                "nodo": "D",
+                "g": 36.0,
+                "h": 25.0,
+                "f": 25.0
+              },
+              {
+                "nodo": "I",
+                "g": 58.0,
+                "h": 20.0,
+                "f": 20.0
+              },
+              {
+                "nodo": "M",
+                "g": 75.0,
+                "h": 15.0,
+                "f": 15.0
+              },
+              {
+                "nodo": "R",
+                "g": 107.0,
+                "h": 10.0,
+                "f": 10.0
+              },
+              {
+                "nodo": "U",
+                "g": 123.0,
+                "h": 5.0,
+                "f": 5.0
+              },
+              {
+                "nodo": "Y",
+                "g": 142.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 5 · saltos(n, Y)",
+              "escala": 5.0
+            },
+            "origen": "A",
+            "destino": "Y",
+            "limite_nodos": 20,
+            "nodos_visitados": 19,
+            "solucion": true,
+            "ruta": [
+              "A",
+              "D",
+              "F",
+              "K",
+              "R",
+              "U",
+              "Y"
+            ],
+            "costo": 115.0,
+            "motivo": "Se llegó a Y con costo 115.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 6,
+              "cota": 729,
+              "nodos_generados": 25,
+              "tiempo_ms": 0.0273
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 6,
+              "cota": 729,
+              "max_frontera": 9,
+              "max_nodos_en_memoria": 23
+            },
+            "traza": [
+              {
+                "nodo": "A",
+                "g": 0.0,
+                "h": 30.0,
+                "f": 30.0
+              },
+              {
+                "nodo": "D",
+                "g": 36.0,
+                "h": 25.0,
+                "f": 61.0
+              },
+              {
+                "nodo": "B",
+                "g": 40.0,
+                "h": 25.0,
+                "f": 65.0
+              },
+              {
+                "nodo": "E",
+                "g": 48.0,
+                "h": 25.0,
+                "f": 73.0
+              },
+              {
+                "nodo": "I",
+                "g": 53.0,
+                "h": 20.0,
+                "f": 73.0
+              },
+              {
+                "nodo": "F",
+                "g": 61.0,
+                "h": 20.0,
+                "f": 81.0
+              },
+              {
+                "nodo": "M",
+                "g": 70.0,
+                "h": 15.0,
+                "f": 85.0
+              },
+              {
+                "nodo": "K",
+                "g": 71.0,
+                "h": 15.0,
+                "f": 86.0
+              },
+              {
+                "nodo": "G",
+                "g": 70.0,
+                "h": 20.0,
+                "f": 90.0
+              },
+              {
+                "nodo": "R",
+                "g": 80.0,
+                "h": 10.0,
+                "f": 90.0
+              },
+              {
+                "nodo": "U",
+                "g": 96.0,
+                "h": 5.0,
+                "f": 101.0
+              },
+              {
+                "nodo": "O",
+                "g": 87.0,
+                "h": 15.0,
+                "f": 102.0
+              },
+              {
+                "nodo": "H",
+                "g": 86.0,
+                "h": 20.0,
+                "f": 106.0
+              },
+              {
+                "nodo": "C",
+                "g": 82.0,
+                "h": 25.0,
+                "f": 107.0
+              },
+              {
+                "nodo": "N",
+                "g": 95.0,
+                "h": 15.0,
+                "f": 110.0
+              },
+              {
+                "nodo": "V",
+                "g": 108.0,
+                "h": 5.0,
+                "f": 113.0
+              },
+              {
+                "nodo": "L",
+                "g": 99.0,
+                "h": 15.0,
+                "f": 114.0
+              },
+              {
+                "nodo": "S",
+                "g": 105.0,
+                "h": 10.0,
+                "f": 115.0
+              },
+              {
+                "nodo": "Y",
+                "g": 115.0,
+                "h": 0.0,
+                "f": 115.0
+              }
+            ]
+          }
+        }
+      },
+      "B->P": {
+        "euclidiana": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.01629 · distancia_euclidiana(n, P)",
+              "escala": 0.016286
+            },
+            "origen": "B",
+            "destino": "P",
+            "limite_nodos": 20,
+            "nodos_visitados": 5,
+            "solucion": true,
+            "ruta": [
+              "B",
+              "G",
+              "F",
+              "M",
+              "P"
+            ],
+            "costo": 139.0,
+            "motivo": "Se llegó a P con costo 139.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 11,
+              "cota": 177147,
+              "nodos_generados": 9,
+              "tiempo_ms": 0.0088
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 11,
+              "cota": 177147,
+              "max_frontera": 5,
+              "max_nodos_en_memoria": 9
+            },
+            "traza": [
+              {
+                "nodo": "B",
+                "g": 0.0,
+                "h": 17.3784,
+                "f": 17.3784
+              },
+              {
+                "nodo": "G",
+                "g": 30.0,
+                "h": 12.5871,
+                "f": 12.5871
+              },
+              {
+                "nodo": "F",
+                "g": 62.0,
+                "h": 9.898,
+                "f": 9.898
+              },
+              {
+                "nodo": "M",
+                "g": 94.0,
+                "h": 6.2877,
+                "f": 6.2877
+              },
+              {
+                "nodo": "P",
+                "g": 139.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.01629 · distancia_euclidiana(n, P)",
+              "escala": 0.016286
+            },
+            "origen": "B",
+            "destino": "P",
+            "limite_nodos": 20,
+            "nodos_visitados": 18,
+            "solucion": true,
+            "ruta": [
+              "B",
+              "D",
+              "E",
+              "I",
+              "M",
+              "P"
+            ],
+            "costo": 91.0,
+            "motivo": "Se llegó a P con costo 91.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 5,
+              "cota": 243,
+              "nodos_generados": 24,
+              "tiempo_ms": 0.2158
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 5,
+              "cota": 243,
+              "max_frontera": 9,
+              "max_nodos_en_memoria": 22
+            },
+            "traza": [
+              {
+                "nodo": "B",
+                "g": 0.0,
+                "h": 17.3784,
+                "f": 17.3784
+              },
+              {
+                "nodo": "D",
+                "g": 12.0,
+                "h": 14.8726,
+                "f": 26.8726
+              },
+              {
+                "nodo": "E",
+                "g": 24.0,
+                "h": 13.4457,
+                "f": 37.4457
+              },
+              {
+                "nodo": "I",
+                "g": 29.0,
+                "h": 8.8268,
+                "f": 37.8268
+              },
+              {
+                "nodo": "G",
+                "g": 30.0,
+                "h": 12.5871,
+                "f": 42.5871
+              },
+              {
+                "nodo": "F",
+                "g": 37.0,
+                "h": 9.898,
+                "f": 46.898
+              },
+              {
+                "nodo": "M",
+                "g": 46.0,
+                "h": 6.2877,
+                "f": 52.2877
+              },
+              {
+                "nodo": "K",
+                "g": 45.0,
+                "h": 10.0,
+                "f": 55.0
+              },
+              {
+                "nodo": "R",
+                "g": 54.0,
+                "h": 4.4786,
+                "f": 58.4786
+              },
+              {
+                "nodo": "H",
+                "g": 50.0,
+                "h": 16.103,
+                "f": 66.103
+              },
+              {
+                "nodo": "O",
+                "g": 63.0,
+                "h": 4.4134,
+                "f": 67.4134
+              },
+              {
+                "nodo": "C",
+                "g": 58.0,
+                "h": 13.443,
+                "f": 71.443
+              },
+              {
+                "nodo": "U",
+                "g": 70.0,
+                "h": 4.9672,
+                "f": 74.9672
+              },
+              {
+                "nodo": "L",
+                "g": 75.0,
+                "h": 6.2993,
+                "f": 81.2993
+              },
+              {
+                "nodo": "N",
+                "g": 69.0,
+                "h": 14.1729,
+                "f": 83.1729
+              },
+              {
+                "nodo": "S",
+                "g": 79.0,
+                "h": 8.9734,
+                "f": 87.9734
+              },
+              {
+                "nodo": "V",
+                "g": 82.0,
+                "h": 8.0672,
+                "f": 90.0672
+              },
+              {
+                "nodo": "P",
+                "g": 91.0,
+                "h": 0.0,
+                "f": 91.0
+              }
+            ]
+          }
+        },
+        "saltos": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 5 · saltos(n, P)",
+              "escala": 5.0
+            },
+            "origen": "B",
+            "destino": "P",
+            "limite_nodos": 20,
+            "nodos_visitados": 5,
+            "solucion": true,
+            "ruta": [
+              "B",
+              "D",
+              "I",
+              "M",
+              "P"
+            ],
+            "costo": 96.0,
+            "motivo": "Se llegó a P con costo 96.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 11,
+              "cota": 177147,
+              "nodos_generados": 10,
+              "tiempo_ms": 0.0074
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 11,
+              "cota": 177147,
+              "max_frontera": 6,
+              "max_nodos_en_memoria": 10
+            },
+            "traza": [
+              {
+                "nodo": "B",
+                "g": 0.0,
+                "h": 20.0,
+                "f": 20.0
+              },
+              {
+                "nodo": "D",
+                "g": 12.0,
+                "h": 15.0,
+                "f": 15.0
+              },
+              {
+                "nodo": "I",
+                "g": 34.0,
+                "h": 10.0,
+                "f": 10.0
+              },
+              {
+                "nodo": "M",
+                "g": 51.0,
+                "h": 5.0,
+                "f": 5.0
+              },
+              {
+                "nodo": "P",
+                "g": 96.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 5 · saltos(n, P)",
+              "escala": 5.0
+            },
+            "origen": "B",
+            "destino": "P",
+            "limite_nodos": 20,
+            "nodos_visitados": 10,
+            "solucion": true,
+            "ruta": [
+              "B",
+              "D",
+              "E",
+              "I",
+              "M",
+              "P"
+            ],
+            "costo": 91.0,
+            "motivo": "Se llegó a P con costo 91.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 5,
+              "cota": 243,
+              "nodos_generados": 16,
+              "tiempo_ms": 0.0149
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 5,
+              "cota": 243,
+              "max_frontera": 6,
+              "max_nodos_en_memoria": 15
+            },
+            "traza": [
+              {
+                "nodo": "B",
+                "g": 0.0,
+                "h": 20.0,
+                "f": 20.0
+              },
+              {
+                "nodo": "D",
+                "g": 12.0,
+                "h": 15.0,
+                "f": 27.0
+              },
+              {
+                "nodo": "E",
+                "g": 24.0,
+                "h": 15.0,
+                "f": 39.0
+              },
+              {
+                "nodo": "I",
+                "g": 29.0,
+                "h": 10.0,
+                "f": 39.0
+              },
+              {
+                "nodo": "G",
+                "g": 30.0,
+                "h": 15.0,
+                "f": 45.0
+              },
+              {
+                "nodo": "F",
+                "g": 37.0,
+                "h": 10.0,
+                "f": 47.0
+              },
+              {
+                "nodo": "M",
+                "g": 46.0,
+                "h": 5.0,
+                "f": 51.0
+              },
+              {
+                "nodo": "O",
+                "g": 63.0,
+                "h": 5.0,
+                "f": 68.0
+              },
+              {
+                "nodo": "C",
+                "g": 58.0,
+                "h": 15.0,
+                "f": 73.0
+              },
+              {
+                "nodo": "P",
+                "g": 91.0,
+                "h": 0.0,
+                "f": 91.0
+              }
+            ]
+          }
+        }
+      },
+      "D->Q": {
+        "euclidiana": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.01629 · distancia_euclidiana(n, Q)",
+              "escala": 0.016286
+            },
+            "origen": "D",
+            "destino": "Q",
+            "limite_nodos": 20,
+            "nodos_visitados": 5,
+            "solucion": true,
+            "ruta": [
+              "D",
+              "I",
+              "O",
+              "L",
+              "Q"
+            ],
+            "costo": 82.0,
+            "motivo": "Se llegó a Q con costo 82.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 10,
+              "cota": 59049,
+              "nodos_generados": 9,
+              "tiempo_ms": 0.0075
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 10,
+              "cota": 59049,
+              "max_frontera": 5,
+              "max_nodos_en_memoria": 9
+            },
+            "traza": [
+              {
+                "nodo": "D",
+                "g": 0.0,
+                "h": 17.3784,
+                "f": 17.3784
+              },
+              {
+                "nodo": "I",
+                "g": 22.0,
+                "h": 9.9054,
+                "f": 9.9054
+              },
+              {
+                "nodo": "O",
+                "g": 56.0,
+                "h": 6.2993,
+                "f": 6.2993
+              },
+              {
+                "nodo": "L",
+                "g": 68.0,
+                "h": 4.4134,
+                "f": 4.4134
+              },
+              {
+                "nodo": "Q",
+                "g": 82.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.01629 · distancia_euclidiana(n, Q)",
+              "escala": 0.016286
+            },
+            "origen": "D",
+            "destino": "Q",
+            "limite_nodos": 20,
+            "nodos_visitados": 13,
+            "solucion": true,
+            "ruta": [
+              "D",
+              "E",
+              "I",
+              "O",
+              "L",
+              "Q"
+            ],
+            "costo": 77.0,
+            "motivo": "Se llegó a Q con costo 77.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 5,
+              "cota": 243,
+              "nodos_generados": 22,
+              "tiempo_ms": 0.0196
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 5,
+              "cota": 243,
+              "max_frontera": 9,
+              "max_nodos_en_memoria": 20
+            },
+            "traza": [
+              {
+                "nodo": "D",
+                "g": 0.0,
+                "h": 17.3784,
+                "f": 17.3784
+              },
+              {
+                "nodo": "E",
+                "g": 12.0,
+                "h": 14.8726,
+                "f": 26.8726
+              },
+              {
+                "nodo": "I",
+                "g": 17.0,
+                "h": 9.9054,
+                "f": 26.9054
+              },
+              {
+                "nodo": "F",
+                "g": 25.0,
+                "h": 12.5871,
+                "f": 37.5871
+              },
+              {
+                "nodo": "M",
+                "g": 34.0,
+                "h": 10.0,
+                "f": 44.0
+              },
+              {
+                "nodo": "K",
+                "g": 35.0,
+                "h": 14.1729,
+                "f": 49.1729
+              },
+              {
+                "nodo": "R",
+                "g": 44.0,
+                "h": 8.9734,
+                "f": 52.9734
+              },
+              {
+                "nodo": "O",
+                "g": 51.0,
+                "h": 6.2993,
+                "f": 57.2993
+              },
+              {
+                "nodo": "C",
+                "g": 46.0,
+                "h": 13.4484,
+                "f": 59.4484
+              },
+              {
+                "nodo": "L",
+                "g": 63.0,
+                "h": 4.4134,
+                "f": 67.4134
+              },
+              {
+                "nodo": "U",
+                "g": 60.0,
+                "h": 8.0672,
+                "f": 68.0672
+              },
+              {
+                "nodo": "H",
+                "g": 50.0,
+                "h": 20.0146,
+                "f": 70.0146
+              },
+              {
+                "nodo": "Q",
+                "g": 77.0,
+                "h": 0.0,
+                "f": 77.0
+              }
+            ]
+          }
+        },
+        "saltos": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 5 · saltos(n, Q)",
+              "escala": 5.0
+            },
+            "origen": "D",
+            "destino": "Q",
+            "limite_nodos": 20,
+            "nodos_visitados": 5,
+            "solucion": true,
+            "ruta": [
+              "D",
+              "I",
+              "O",
+              "L",
+              "Q"
+            ],
+            "costo": 82.0,
+            "motivo": "Se llegó a Q con costo 82.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 10,
+              "cota": 59049,
+              "nodos_generados": 9,
+              "tiempo_ms": 0.007
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 10,
+              "cota": 59049,
+              "max_frontera": 5,
+              "max_nodos_en_memoria": 9
+            },
+            "traza": [
+              {
+                "nodo": "D",
+                "g": 0.0,
+                "h": 20.0,
+                "f": 20.0
+              },
+              {
+                "nodo": "I",
+                "g": 22.0,
+                "h": 15.0,
+                "f": 15.0
+              },
+              {
+                "nodo": "O",
+                "g": 56.0,
+                "h": 10.0,
+                "f": 10.0
+              },
+              {
+                "nodo": "L",
+                "g": 68.0,
+                "h": 5.0,
+                "f": 5.0
+              },
+              {
+                "nodo": "Q",
+                "g": 82.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 5 · saltos(n, Q)",
+              "escala": 5.0
+            },
+            "origen": "D",
+            "destino": "Q",
+            "limite_nodos": 20,
+            "nodos_visitados": 7,
+            "solucion": true,
+            "ruta": [
+              "D",
+              "E",
+              "I",
+              "O",
+              "L",
+              "Q"
+            ],
+            "costo": 77.0,
+            "motivo": "Se llegó a Q con costo 77.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 5,
+              "cota": 243,
+              "nodos_generados": 12,
+              "tiempo_ms": 0.012
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 5,
+              "cota": 243,
+              "max_frontera": 5,
+              "max_nodos_en_memoria": 11
+            },
+            "traza": [
+              {
+                "nodo": "D",
+                "g": 0.0,
+                "h": 20.0,
+                "f": 20.0
+              },
+              {
+                "nodo": "E",
+                "g": 12.0,
+                "h": 20.0,
+                "f": 32.0
+              },
+              {
+                "nodo": "I",
+                "g": 17.0,
+                "h": 15.0,
+                "f": 32.0
+              },
+              {
+                "nodo": "C",
+                "g": 46.0,
+                "h": 15.0,
+                "f": 61.0
+              },
+              {
+                "nodo": "O",
+                "g": 51.0,
+                "h": 10.0,
+                "f": 61.0
+              },
+              {
+                "nodo": "L",
+                "g": 63.0,
+                "h": 5.0,
+                "f": 68.0
+              },
+              {
+                "nodo": "Q",
+                "g": 77.0,
+                "h": 0.0,
+                "f": 77.0
+              }
+            ]
+          }
+        }
+      }
+    },
+    "grafo-50": {
+      "A->AX": {
+        "euclidiana": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.04666 · distancia_euclidiana(n, AX)",
+              "escala": 0.046657
+            },
+            "origen": "A",
+            "destino": "AX",
+            "limite_nodos": 40,
+            "nodos_visitados": 8,
+            "solucion": true,
+            "ruta": [
+              "A",
+              "C",
+              "M",
+              "V",
+              "AF",
+              "AL",
+              "AU",
+              "AX"
+            ],
+            "costo": 224.0,
+            "motivo": "Se llegó a AX con costo 224.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 8,
+              "cota": 6561,
+              "nodos_generados": 11,
+              "tiempo_ms": 0.0124
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 8,
+              "cota": 6561,
+              "max_frontera": 4,
+              "max_nodos_en_memoria": 11
+            },
+            "traza": [
+              {
+                "nodo": "A",
+                "g": 0.0,
+                "h": 76.0037,
+                "f": 76.0037
+              },
+              {
+                "nodo": "C",
+                "g": 60.0,
+                "h": 65.2099,
+                "f": 65.2099
+              },
+              {
+                "nodo": "M",
+                "g": 102.0,
+                "h": 54.3544,
+                "f": 54.3544
+              },
+              {
+                "nodo": "V",
+                "g": 131.0,
+                "h": 43.3907,
+                "f": 43.3907
+              },
+              {
+                "nodo": "AF",
+                "g": 165.0,
+                "h": 33.151,
+                "f": 33.151
+              },
+              {
+                "nodo": "AL",
+                "g": 184.0,
+                "h": 21.9261,
+                "f": 21.9261
+              },
+              {
+                "nodo": "AU",
+                "g": 212.0,
+                "h": 11.2929,
+                "f": 11.2929
+              },
+              {
+                "nodo": "AX",
+                "g": 224.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.04666 · distancia_euclidiana(n, AX)",
+              "escala": 0.046657
+            },
+            "origen": "A",
+            "destino": "AX",
+            "limite_nodos": 40,
+            "nodos_visitados": 19,
+            "solucion": true,
+            "ruta": [
+              "A",
+              "F",
+              "K",
+              "R",
+              "AD",
+              "AM",
+              "AV",
+              "AX"
+            ],
+            "costo": 181.0,
+            "motivo": "Se llegó a AX con costo 181.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 7,
+              "cota": 2187,
+              "nodos_generados": 20,
+              "tiempo_ms": 0.0242
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 7,
+              "cota": 2187,
+              "max_frontera": 5,
+              "max_nodos_en_memoria": 20
+            },
+            "traza": [
+              {
+                "nodo": "A",
+                "g": 0.0,
+                "h": 76.0037,
+                "f": 76.0037
+              },
+              {
+                "nodo": "F",
+                "g": 28.0,
+                "h": 65.2122,
+                "f": 93.2122
+              },
+              {
+                "nodo": "G",
+                "g": 43.0,
+                "h": 65.8448,
+                "f": 108.8448
+              },
+              {
+                "nodo": "B",
+                "g": 45.0,
+                "h": 67.0922,
+                "f": 112.0922
+              },
+              {
+                "nodo": "K",
+                "g": 63.0,
+                "h": 54.3571,
+                "f": 117.3571
+              },
+              {
+                "nodo": "C",
+                "g": 60.0,
+                "h": 65.2099,
+                "f": 125.2099
+              },
+              {
+                "nodo": "I",
+                "g": 75.0,
+                "h": 55.1145,
+                "f": 130.1145
+              },
+              {
+                "nodo": "R",
+                "g": 87.0,
+                "h": 43.8658,
+                "f": 130.8658
+              },
+              {
+                "nodo": "N",
+                "g": 83.0,
+                "h": 56.5988,
+                "f": 139.5988
+              },
+              {
+                "nodo": "AD",
+                "g": 113.0,
+                "h": 34.9765,
+                "f": 147.9765
+              },
+              {
+                "nodo": "W",
+                "g": 102.0,
+                "h": 47.4958,
+                "f": 149.4958
+              },
+              {
+                "nodo": "S",
+                "g": 108.0,
+                "h": 45.2612,
+                "f": 153.2612
+              },
+              {
+                "nodo": "AA",
+                "g": 117.0,
+                "h": 37.8237,
+                "f": 154.8237
+              },
+              {
+                "nodo": "H",
+                "g": 97.0,
+                "h": 58.7551,
+                "f": 155.7551
+              },
+              {
+                "nodo": "M",
+                "g": 102.0,
+                "h": 54.3544,
+                "f": 156.3544
+              },
+              {
+                "nodo": "AM",
+                "g": 141.0,
+                "h": 27.0146,
+                "f": 168.0146
+              },
+              {
+                "nodo": "V",
+                "g": 131.0,
+                "h": 43.3907,
+                "f": 174.3907
+              },
+              {
+                "nodo": "AV",
+                "g": 159.0,
+                "h": 19.3976,
+                "f": 178.3976
+              },
+              {
+                "nodo": "AX",
+                "g": 181.0,
+                "h": 0.0,
+                "f": 181.0
+              }
+            ]
+          }
+        },
+        "saltos": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 12 · saltos(n, AX)",
+              "escala": 12.0
+            },
+            "origen": "A",
+            "destino": "AX",
+            "limite_nodos": 40,
+            "nodos_visitados": 8,
+            "solucion": true,
+            "ruta": [
+              "A",
+              "F",
+              "K",
+              "R",
+              "AD",
+              "AM",
+              "AV",
+              "AX"
+            ],
+            "costo": 181.0,
+            "motivo": "Se llegó a AX con costo 181.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 8,
+              "cota": 6561,
+              "nodos_generados": 11,
+              "tiempo_ms": 0.0099
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 3,
+              "profundidad": 8,
+              "cota": 6561,
+              "max_frontera": 4,
+              "max_nodos_en_memoria": 11
+            },
+            "traza": [
+              {
+                "nodo": "A",
+                "g": 0.0,
+                "h": 84.0,
+                "f": 84.0
+              },
+              {
+                "nodo": "F",
+                "g": 28.0,
+                "h": 72.0,
+                "f": 72.0
+              },
+              {
+                "nodo": "K",
+                "g": 63.0,
+                "h": 60.0,
+                "f": 60.0
+              },
+              {
+                "nodo": "R",
+                "g": 87.0,
+                "h": 48.0,
+                "f": 48.0
+              },
+              {
+                "nodo": "AD",
+                "g": 113.0,
+                "h": 36.0,
+                "f": 36.0
+              },
+              {
+                "nodo": "AM",
+                "g": 141.0,
+                "h": 24.0,
+                "f": 24.0
+              },
+              {
+                "nodo": "AV",
+                "g": 159.0,
+                "h": 12.0,
+                "f": 12.0
+              },
+              {
+                "nodo": "AX",
+                "g": 181.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 12 · saltos(n, AX)",
+              "escala": 12.0
+            },
+            "origen": "A",
+            "destino": "AX",
+            "limite_nodos": 40,
+            "nodos_visitados": 19,
+            "solucion": true,
+            "ruta": [
+              "A",
+              "F",
+              "K",
+              "R",
+              "AD",
+              "AM",
+              "AV",
+              "AX"
+            ],
+            "costo": 181.0,
+            "motivo": "Se llegó a AX con costo 181.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 7,
+              "cota": 2187,
+              "nodos_generados": 20,
+              "tiempo_ms": 0.024
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 3,
+              "profundidad": 7,
+              "cota": 2187,
+              "max_frontera": 5,
+              "max_nodos_en_memoria": 20
+            },
+            "traza": [
+              {
+                "nodo": "A",
+                "g": 0.0,
+                "h": 84.0,
+                "f": 84.0
+              },
+              {
+                "nodo": "F",
+                "g": 28.0,
+                "h": 72.0,
+                "f": 100.0
+              },
+              {
+                "nodo": "G",
+                "g": 43.0,
+                "h": 72.0,
+                "f": 115.0
+              },
+              {
+                "nodo": "B",
+                "g": 45.0,
+                "h": 72.0,
+                "f": 117.0
+              },
+              {
+                "nodo": "K",
+                "g": 63.0,
+                "h": 60.0,
+                "f": 123.0
+              },
+              {
+                "nodo": "C",
+                "g": 60.0,
+                "h": 72.0,
+                "f": 132.0
+              },
+              {
+                "nodo": "I",
+                "g": 75.0,
+                "h": 60.0,
+                "f": 135.0
+              },
+              {
+                "nodo": "R",
+                "g": 87.0,
+                "h": 48.0,
+                "f": 135.0
+              },
+              {
+                "nodo": "N",
+                "g": 83.0,
+                "h": 60.0,
+                "f": 143.0
+              },
+              {
+                "nodo": "AD",
+                "g": 113.0,
+                "h": 36.0,
+                "f": 149.0
+              },
+              {
+                "nodo": "W",
+                "g": 102.0,
+                "h": 48.0,
+                "f": 150.0
+              },
+              {
+                "nodo": "AA",
+                "g": 117.0,
+                "h": 36.0,
+                "f": 153.0
+              },
+              {
+                "nodo": "S",
+                "g": 108.0,
+                "h": 48.0,
+                "f": 156.0
+              },
+              {
+                "nodo": "H",
+                "g": 97.0,
+                "h": 60.0,
+                "f": 157.0
+              },
+              {
+                "nodo": "M",
+                "g": 102.0,
+                "h": 60.0,
+                "f": 162.0
+              },
+              {
+                "nodo": "AM",
+                "g": 141.0,
+                "h": 24.0,
+                "f": 165.0
+              },
+              {
+                "nodo": "AV",
+                "g": 159.0,
+                "h": 12.0,
+                "f": 171.0
+              },
+              {
+                "nodo": "V",
+                "g": 131.0,
+                "h": 48.0,
+                "f": 179.0
+              },
+              {
+                "nodo": "AX",
+                "g": 181.0,
+                "h": 0.0,
+                "f": 181.0
+              }
+            ]
+          }
+        }
+      },
+      "D->AS": {
+        "euclidiana": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.04666 · distancia_euclidiana(n, AS)",
+              "escala": 0.046657
+            },
+            "origen": "D",
+            "destino": "AS",
+            "limite_nodos": 40,
+            "nodos_visitados": 6,
+            "solucion": true,
+            "ruta": [
+              "D",
+              "J",
+              "X",
+              "AG",
+              "AH",
+              "AS"
+            ],
+            "costo": 262.0,
+            "motivo": "Se llegó a AS con costo 262.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 2,
+              "profundidad": 6,
+              "cota": 64,
+              "nodos_generados": 7,
+              "tiempo_ms": 0.0077
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 2,
+              "profundidad": 6,
+              "cota": 64,
+              "max_frontera": 2,
+              "max_nodos_en_memoria": 7
+            },
+            "traza": [
+              {
+                "nodo": "D",
+                "g": 0.0,
+                "h": 54.6887,
+                "f": 54.6887
+              },
+              {
+                "nodo": "J",
+                "g": 65.0,
+                "h": 43.4373,
+                "f": 43.4373
+              },
+              {
+                "nodo": "X",
+                "g": 127.0,
+                "h": 32.7251,
+                "f": 32.7251
+              },
+              {
+                "nodo": "AG",
+                "g": 169.0,
+                "h": 21.9329,
+                "f": 21.9329
+              },
+              {
+                "nodo": "AH",
+                "g": 202.0,
+                "h": 10.871,
+                "f": 10.871
+              },
+              {
+                "nodo": "AS",
+                "g": 262.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.04666 · distancia_euclidiana(n, AS)",
+              "escala": 0.046657
+            },
+            "origen": "D",
+            "destino": "AS",
+            "limite_nodos": 40,
+            "nodos_visitados": 8,
+            "solucion": true,
+            "ruta": [
+              "D",
+              "L",
+              "U",
+              "AG",
+              "AH",
+              "AS"
+            ],
+            "costo": 220.0,
+            "motivo": "Se llegó a AS con costo 220.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 2,
+              "profundidad": 5,
+              "cota": 32,
+              "nodos_generados": 8,
+              "tiempo_ms": 0.0141
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 2,
+              "profundidad": 5,
+              "cota": 32,
+              "max_frontera": 2,
+              "max_nodos_en_memoria": 8
+            },
+            "traza": [
+              {
+                "nodo": "D",
+                "g": 0.0,
+                "h": 54.6887,
+                "f": 54.6887
+              },
+              {
+                "nodo": "L",
+                "g": 18.0,
+                "h": 43.9119,
+                "f": 61.9119
+              },
+              {
+                "nodo": "U",
+                "g": 59.0,
+                "h": 32.7251,
+                "f": 91.7251
+              },
+              {
+                "nodo": "J",
+                "g": 65.0,
+                "h": 43.4373,
+                "f": 108.4373
+              },
+              {
+                "nodo": "AG",
+                "g": 127.0,
+                "h": 21.9329,
+                "f": 148.9329
+              },
+              {
+                "nodo": "X",
+                "g": 127.0,
+                "h": 32.7251,
+                "f": 159.7251
+              },
+              {
+                "nodo": "AH",
+                "g": 160.0,
+                "h": 10.871,
+                "f": 170.871
+              },
+              {
+                "nodo": "AS",
+                "g": 220.0,
+                "h": 0.0,
+                "f": 220.0
+              }
+            ]
+          }
+        },
+        "saltos": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 12 · saltos(n, AS)",
+              "escala": 12.0
+            },
+            "origen": "D",
+            "destino": "AS",
+            "limite_nodos": 40,
+            "nodos_visitados": 6,
+            "solucion": true,
+            "ruta": [
+              "D",
+              "L",
+              "U",
+              "AG",
+              "AH",
+              "AS"
+            ],
+            "costo": 220.0,
+            "motivo": "Se llegó a AS con costo 220.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 2,
+              "profundidad": 6,
+              "cota": 64,
+              "nodos_generados": 7,
+              "tiempo_ms": 0.0078
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 2,
+              "profundidad": 6,
+              "cota": 64,
+              "max_frontera": 2,
+              "max_nodos_en_memoria": 7
+            },
+            "traza": [
+              {
+                "nodo": "D",
+                "g": 0.0,
+                "h": 60.0,
+                "f": 60.0
+              },
+              {
+                "nodo": "L",
+                "g": 18.0,
+                "h": 48.0,
+                "f": 48.0
+              },
+              {
+                "nodo": "U",
+                "g": 59.0,
+                "h": 36.0,
+                "f": 36.0
+              },
+              {
+                "nodo": "AG",
+                "g": 127.0,
+                "h": 24.0,
+                "f": 24.0
+              },
+              {
+                "nodo": "AH",
+                "g": 160.0,
+                "h": 12.0,
+                "f": 12.0
+              },
+              {
+                "nodo": "AS",
+                "g": 220.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 12 · saltos(n, AS)",
+              "escala": 12.0
+            },
+            "origen": "D",
+            "destino": "AS",
+            "limite_nodos": 40,
+            "nodos_visitados": 8,
+            "solucion": true,
+            "ruta": [
+              "D",
+              "L",
+              "U",
+              "AG",
+              "AH",
+              "AS"
+            ],
+            "costo": 220.0,
+            "motivo": "Se llegó a AS con costo 220.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 2,
+              "profundidad": 5,
+              "cota": 32,
+              "nodos_generados": 8,
+              "tiempo_ms": 0.0114
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 2,
+              "profundidad": 5,
+              "cota": 32,
+              "max_frontera": 2,
+              "max_nodos_en_memoria": 8
+            },
+            "traza": [
+              {
+                "nodo": "D",
+                "g": 0.0,
+                "h": 60.0,
+                "f": 60.0
+              },
+              {
+                "nodo": "L",
+                "g": 18.0,
+                "h": 48.0,
+                "f": 66.0
+              },
+              {
+                "nodo": "U",
+                "g": 59.0,
+                "h": 36.0,
+                "f": 95.0
+              },
+              {
+                "nodo": "J",
+                "g": 65.0,
+                "h": 48.0,
+                "f": 113.0
+              },
+              {
+                "nodo": "AG",
+                "g": 127.0,
+                "h": 24.0,
+                "f": 151.0
+              },
+              {
+                "nodo": "X",
+                "g": 127.0,
+                "h": 36.0,
+                "f": 163.0
+              },
+              {
+                "nodo": "AH",
+                "g": 160.0,
+                "h": 12.0,
+                "f": 172.0
+              },
+              {
+                "nodo": "AS",
+                "g": 220.0,
+                "h": 0.0,
+                "f": 220.0
+              }
+            ]
+          }
+        }
+      },
+      "B->AA": {
+        "euclidiana": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.04666 · distancia_euclidiana(n, AA)",
+              "escala": 0.046657
+            },
+            "origen": "B",
+            "destino": "AA",
+            "limite_nodos": 40,
+            "nodos_visitados": 4,
+            "solucion": true,
+            "ruta": [
+              "B",
+              "H",
+              "S",
+              "AA"
+            ],
+            "costo": 128.0,
+            "motivo": "Se llegó a AA con costo 128.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 2,
+              "profundidad": 6,
+              "cota": 64,
+              "nodos_generados": 5,
+              "tiempo_ms": 0.0058
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 2,
+              "profundidad": 6,
+              "cota": 64,
+              "max_frontera": 2,
+              "max_nodos_en_memoria": 5
+            },
+            "traza": [
+              {
+                "nodo": "B",
+                "g": 0.0,
+                "h": 32.7715,
+                "f": 32.7715
+              },
+              {
+                "nodo": "H",
+                "g": 52.0,
+                "h": 21.979,
+                "f": 21.979
+              },
+              {
+                "nodo": "S",
+                "g": 80.0,
+                "h": 12.6347,
+                "f": 12.6347
+              },
+              {
+                "nodo": "AA",
+                "g": 128.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "euclidiana",
+              "formula": "h(n) = 0.04666 · distancia_euclidiana(n, AA)",
+              "escala": 0.046657
+            },
+            "origen": "B",
+            "destino": "AA",
+            "limite_nodos": 40,
+            "nodos_visitados": 5,
+            "solucion": true,
+            "ruta": [
+              "B",
+              "I",
+              "S",
+              "AA"
+            ],
+            "costo": 111.0,
+            "motivo": "Se llegó a AA con costo 111.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 2,
+              "profundidad": 3,
+              "cota": 8,
+              "nodos_generados": 5,
+              "tiempo_ms": 0.0085
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 2,
+              "profundidad": 3,
+              "cota": 8,
+              "max_frontera": 2,
+              "max_nodos_en_memoria": 5
+            },
+            "traza": [
+              {
+                "nodo": "B",
+                "g": 0.0,
+                "h": 32.7715,
+                "f": 32.7715
+              },
+              {
+                "nodo": "I",
+                "g": 30.0,
+                "h": 23.7905,
+                "f": 53.7905
+              },
+              {
+                "nodo": "H",
+                "g": 52.0,
+                "h": 21.979,
+                "f": 73.979
+              },
+              {
+                "nodo": "S",
+                "g": 63.0,
+                "h": 12.6347,
+                "f": 75.6347
+              },
+              {
+                "nodo": "AA",
+                "g": 111.0,
+                "h": 0.0,
+                "f": 111.0
+              }
+            ]
+          }
+        },
+        "saltos": {
+          "greedy": {
+            "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+            "criterio": "f(n) = h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 12 · saltos(n, AA)",
+              "escala": 12.0
+            },
+            "origen": "B",
+            "destino": "AA",
+            "limite_nodos": 40,
+            "nodos_visitados": 4,
+            "solucion": true,
+            "ruta": [
+              "B",
+              "I",
+              "S",
+              "AA"
+            ],
+            "costo": 111.0,
+            "motivo": "Se llegó a AA con costo 111.",
+            "T(n)": {
+              "notacion": "O(b^m)",
+              "b": 2,
+              "profundidad": 6,
+              "cota": 64,
+              "nodos_generados": 5,
+              "tiempo_ms": 0.0056
+            },
+            "S(n)": {
+              "notacion": "O(b^m)",
+              "b": 2,
+              "profundidad": 6,
+              "cota": 64,
+              "max_frontera": 2,
+              "max_nodos_en_memoria": 5
+            },
+            "traza": [
+              {
+                "nodo": "B",
+                "g": 0.0,
+                "h": 36.0,
+                "f": 36.0
+              },
+              {
+                "nodo": "I",
+                "g": 30.0,
+                "h": 24.0,
+                "f": 24.0
+              },
+              {
+                "nodo": "S",
+                "g": 63.0,
+                "h": 12.0,
+                "f": 12.0
+              },
+              {
+                "nodo": "AA",
+                "g": 111.0,
+                "h": 0.0,
+                "f": 0.0
+              }
+            ]
+          },
+          "star": {
+            "algoritmo": "Búsqueda A*",
+            "criterio": "f(n) = g(n) + h(n)",
+            "heuristica": {
+              "tipo": "saltos",
+              "formula": "h(n) = 12 · saltos(n, AA)",
+              "escala": 12.0
+            },
+            "origen": "B",
+            "destino": "AA",
+            "limite_nodos": 40,
+            "nodos_visitados": 5,
+            "solucion": true,
+            "ruta": [
+              "B",
+              "I",
+              "S",
+              "AA"
+            ],
+            "costo": 111.0,
+            "motivo": "Se llegó a AA con costo 111.",
+            "T(n)": {
+              "notacion": "O(b^d)",
+              "b": 2,
+              "profundidad": 3,
+              "cota": 8,
+              "nodos_generados": 5,
+              "tiempo_ms": 0.0078
+            },
+            "S(n)": {
+              "notacion": "O(b^d)",
+              "b": 2,
+              "profundidad": 3,
+              "cota": 8,
+              "max_frontera": 2,
+              "max_nodos_en_memoria": 5
+            },
+            "traza": [
+              {
+                "nodo": "B",
+                "g": 0.0,
+                "h": 36.0,
+                "f": 36.0
+              },
+              {
+                "nodo": "I",
+                "g": 30.0,
+                "h": 24.0,
+                "f": 54.0
+              },
+              {
+                "nodo": "S",
+                "g": 63.0,
+                "h": 12.0,
+                "f": 75.0
+              },
+              {
+                "nodo": "H",
+                "g": 52.0,
+                "h": 24.0,
+                "f": 76.0
+              },
+              {
+                "nodo": "AA",
+                "g": 111.0,
+                "h": 0.0,
+                "f": 111.0
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "adicionales": {
+    "sin_camino": {
+      "greedy": {
+        "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+        "criterio": "f(n) = h(n)",
+        "heuristica": {
+          "tipo": "saltos",
+          "formula": "h(n) = 8 · saltos(n, A)",
+          "escala": 8.0
+        },
+        "origen": "J",
+        "destino": "A",
+        "limite_nodos": 8,
+        "nodos_visitados": 1,
+        "solucion": false,
+        "ruta": [],
+        "costo": null,
+        "motivo": "Se exploraron todos los nodos alcanzables desde J y A no está entre ellos: no existe camino.",
+        "T(n)": {
+          "notacion": "O(b^m)",
+          "b": 0,
+          "profundidad": 0,
+          "cota": 1,
+          "nodos_generados": 1,
+          "tiempo_ms": 0.0017
+        },
+        "S(n)": {
+          "notacion": "O(b^m)",
+          "b": 0,
+          "profundidad": 0,
+          "cota": 1,
+          "max_frontera": 1,
+          "max_nodos_en_memoria": 1
+        },
+        "traza": [
+          {
+            "nodo": "J",
+            "g": 0.0,
+            "h": null,
+            "f": null
+          }
+        ]
+      },
+      "star": {
+        "algoritmo": "Búsqueda A*",
+        "criterio": "f(n) = g(n) + h(n)",
+        "heuristica": {
+          "tipo": "saltos",
+          "formula": "h(n) = 8 · saltos(n, A)",
+          "escala": 8.0
+        },
+        "origen": "J",
+        "destino": "A",
+        "limite_nodos": 8,
+        "nodos_visitados": 1,
+        "solucion": false,
+        "ruta": [],
+        "costo": null,
+        "motivo": "Se exploraron todos los nodos alcanzables desde J y A no está entre ellos: no existe camino.",
+        "T(n)": {
+          "notacion": "O(b^d)",
+          "b": 0,
+          "profundidad": 0,
+          "cota": 1,
+          "nodos_generados": 1,
+          "tiempo_ms": 0.0019
+        },
+        "S(n)": {
+          "notacion": "O(b^d)",
+          "b": 0,
+          "profundidad": 0,
+          "cota": 1,
+          "max_frontera": 1,
+          "max_nodos_en_memoria": 1
+        },
+        "traza": [
+          {
+            "nodo": "J",
+            "g": 0.0,
+            "h": null,
+            "f": null
+          }
+        ]
+      }
+    },
+    "limite_y_heuristica": {
+      "euclidiana": {
+        "greedy": {
+          "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+          "criterio": "f(n) = h(n)",
+          "heuristica": {
+            "tipo": "euclidiana",
+            "formula": "h(n) = 0.01629 · distancia_euclidiana(n, T)",
+            "escala": 0.016286
+          },
+          "origen": "B",
+          "destino": "T",
+          "limite_nodos": 20,
+          "nodos_visitados": 5,
+          "solucion": true,
+          "ruta": [
+            "B",
+            "G",
+            "K",
+            "N",
+            "T"
+          ],
+          "costo": 121.0,
+          "motivo": "Se llegó a T con costo 121.",
+          "T(n)": {
+            "notacion": "O(b^m)",
+            "b": 3,
+            "profundidad": 11,
+            "cota": 177147,
+            "nodos_generados": 10,
+            "tiempo_ms": 0.0075
+          },
+          "S(n)": {
+            "notacion": "O(b^m)",
+            "b": 3,
+            "profundidad": 11,
+            "cota": 177147,
+            "max_frontera": 6,
+            "max_nodos_en_memoria": 10
+          },
+          "traza": [
+            {
+              "nodo": "B",
+              "g": 0.0,
+              "h": 13.443,
+              "f": 13.443
+            },
+            {
+              "nodo": "G",
+              "g": 30.0,
+              "h": 9.9054,
+              "f": 9.9054
+            },
+            {
+              "nodo": "K",
+              "g": 45.0,
+              "h": 6.2993,
+              "f": 6.2993
+            },
+            {
+              "nodo": "N",
+              "g": 69.0,
+              "h": 4.4134,
+              "f": 4.4134
+            },
+            {
+              "nodo": "T",
+              "g": 121.0,
+              "h": 0.0,
+              "f": 0.0
+            }
+          ]
+        },
+        "star": {
+          "algoritmo": "Búsqueda A*",
+          "criterio": "f(n) = g(n) + h(n)",
+          "heuristica": {
+            "tipo": "euclidiana",
+            "formula": "h(n) = 0.01629 · distancia_euclidiana(n, T)",
+            "escala": 0.016286
+          },
+          "origen": "B",
+          "destino": "T",
+          "limite_nodos": 20,
+          "nodos_visitados": 20,
+          "solucion": false,
+          "ruta": [],
+          "costo": null,
+          "motivo": "Se alcanzó el límite de 20 nodos visitados sin llegar a T.",
+          "T(n)": {
+            "notacion": "O(b^d)",
+            "b": 3,
+            "profundidad": 6,
+            "cota": 729,
+            "nodos_generados": 24,
+            "tiempo_ms": 0.0265
+          },
+          "S(n)": {
+            "notacion": "O(b^d)",
+            "b": 3,
+            "profundidad": 6,
+            "cota": 729,
+            "max_frontera": 8,
+            "max_nodos_en_memoria": 23
+          },
+          "traza": [
+            {
+              "nodo": "B",
+              "g": 0.0,
+              "h": 13.443,
+              "f": 13.443
+            },
+            {
+              "nodo": "D",
+              "g": 12.0,
+              "h": 14.8652,
+              "f": 26.8652
+            },
+            {
+              "nodo": "G",
+              "g": 30.0,
+              "h": 9.9054,
+              "f": 39.9054
+            },
+            {
+              "nodo": "E",
+              "g": 24.0,
+              "h": 17.3678,
+              "f": 41.3678
+            },
+            {
+              "nodo": "I",
+              "g": 29.0,
+              "h": 16.103,
+              "f": 45.103
+            },
+            {
+              "nodo": "F",
+              "g": 37.0,
+              "h": 12.5987,
+              "f": 49.5987
+            },
+            {
+              "nodo": "K",
+              "g": 45.0,
+              "h": 6.2993,
+              "f": 51.2993
+            },
+            {
+              "nodo": "M",
+              "g": 46.0,
+              "h": 10.0146,
+              "f": 56.0146
+            },
+            {
+              "nodo": "H",
+              "g": 50.0,
+              "h": 8.8268,
+              "f": 58.8268
+            },
+            {
+              "nodo": "R",
+              "g": 54.0,
+              "h": 8.9897,
+              "f": 62.9897
+            },
+            {
+              "nodo": "N",
+              "g": 69.0,
+              "h": 4.4134,
+              "f": 73.4134
+            },
+            {
+              "nodo": "O",
+              "g": 63.0,
+              "h": 14.1729,
+              "f": 77.1729
+            },
+            {
+              "nodo": "C",
+              "g": 58.0,
+              "h": 20.5476,
+              "f": 78.5476
+            },
+            {
+              "nodo": "U",
+              "g": 70.0,
+              "h": 12.0635,
+              "f": 82.0635
+            },
+            {
+              "nodo": "S",
+              "g": 79.0,
+              "h": 4.4948,
+              "f": 83.4948
+            },
+            {
+              "nodo": "V",
+              "g": 82.0,
+              "h": 8.0536,
+              "f": 90.0536
+            },
+            {
+              "nodo": "L",
+              "g": 75.0,
+              "h": 18.4973,
+              "f": 93.4973
+            },
+            {
+              "nodo": "Y",
+              "g": 89.0,
+              "h": 12.6101,
+              "f": 101.6101
+            },
+            {
+              "nodo": "P",
+              "g": 91.0,
+              "h": 13.4682,
+              "f": 104.4682
+            },
+            {
+              "nodo": "Q",
+              "g": 89.0,
+              "h": 17.9631,
+              "f": 106.9631
+            }
+          ]
+        }
+      },
+      "saltos": {
+        "greedy": {
+          "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+          "criterio": "f(n) = h(n)",
+          "heuristica": {
+            "tipo": "saltos",
+            "formula": "h(n) = 5 · saltos(n, T)",
+            "escala": 5.0
+          },
+          "origen": "B",
+          "destino": "T",
+          "limite_nodos": 20,
+          "nodos_visitados": 5,
+          "solucion": true,
+          "ruta": [
+            "B",
+            "G",
+            "K",
+            "R",
+            "T"
+          ],
+          "costo": 118.0,
+          "motivo": "Se llegó a T con costo 118.",
+          "T(n)": {
+            "notacion": "O(b^m)",
+            "b": 3,
+            "profundidad": 11,
+            "cota": 177147,
+            "nodos_generados": 12,
+            "tiempo_ms": 0.0075
+          },
+          "S(n)": {
+            "notacion": "O(b^m)",
+            "b": 3,
+            "profundidad": 11,
+            "cota": 177147,
+            "max_frontera": 8,
+            "max_nodos_en_memoria": 12
+          },
+          "traza": [
+            {
+              "nodo": "B",
+              "g": 0.0,
+              "h": 20.0,
+              "f": 20.0
+            },
+            {
+              "nodo": "G",
+              "g": 30.0,
+              "h": 15.0,
+              "f": 15.0
+            },
+            {
+              "nodo": "K",
+              "g": 45.0,
+              "h": 10.0,
+              "f": 10.0
+            },
+            {
+              "nodo": "R",
+              "g": 54.0,
+              "h": 5.0,
+              "f": 5.0
+            },
+            {
+              "nodo": "T",
+              "g": 118.0,
+              "h": 0.0,
+              "f": 0.0
+            }
+          ]
+        },
+        "star": {
+          "algoritmo": "Búsqueda A*",
+          "criterio": "f(n) = g(n) + h(n)",
+          "heuristica": {
+            "tipo": "saltos",
+            "formula": "h(n) = 5 · saltos(n, T)",
+            "escala": 5.0
+          },
+          "origen": "B",
+          "destino": "T",
+          "limite_nodos": 20,
+          "nodos_visitados": 17,
+          "solucion": true,
+          "ruta": [
+            "B",
+            "G",
+            "K",
+            "R",
+            "T"
+          ],
+          "costo": 118.0,
+          "motivo": "Se llegó a T con costo 118.",
+          "T(n)": {
+            "notacion": "O(b^d)",
+            "b": 3,
+            "profundidad": 4,
+            "cota": 81,
+            "nodos_generados": 23,
+            "tiempo_ms": 0.0231
+          },
+          "S(n)": {
+            "notacion": "O(b^d)",
+            "b": 3,
+            "profundidad": 4,
+            "cota": 81,
+            "max_frontera": 9,
+            "max_nodos_en_memoria": 22
+          },
+          "traza": [
+            {
+              "nodo": "B",
+              "g": 0.0,
+              "h": 20.0,
+              "f": 20.0
+            },
+            {
+              "nodo": "D",
+              "g": 12.0,
+              "h": 20.0,
+              "f": 32.0
+            },
+            {
+              "nodo": "E",
+              "g": 24.0,
+              "h": 20.0,
+              "f": 44.0
+            },
+            {
+              "nodo": "I",
+              "g": 29.0,
+              "h": 15.0,
+              "f": 44.0
+            },
+            {
+              "nodo": "G",
+              "g": 30.0,
+              "h": 15.0,
+              "f": 45.0
+            },
+            {
+              "nodo": "F",
+              "g": 37.0,
+              "h": 15.0,
+              "f": 52.0
+            },
+            {
+              "nodo": "K",
+              "g": 45.0,
+              "h": 10.0,
+              "f": 55.0
+            },
+            {
+              "nodo": "M",
+              "g": 46.0,
+              "h": 10.0,
+              "f": 56.0
+            },
+            {
+              "nodo": "R",
+              "g": 54.0,
+              "h": 5.0,
+              "f": 59.0
+            },
+            {
+              "nodo": "H",
+              "g": 50.0,
+              "h": 10.0,
+              "f": 60.0
+            },
+            {
+              "nodo": "N",
+              "g": 69.0,
+              "h": 5.0,
+              "f": 74.0
+            },
+            {
+              "nodo": "C",
+              "g": 58.0,
+              "h": 20.0,
+              "f": 78.0
+            },
+            {
+              "nodo": "O",
+              "g": 63.0,
+              "h": 20.0,
+              "f": 83.0
+            },
+            {
+              "nodo": "L",
+              "g": 75.0,
+              "h": 15.0,
+              "f": 90.0
+            },
+            {
+              "nodo": "Q",
+              "g": 89.0,
+              "h": 10.0,
+              "f": 99.0
+            },
+            {
+              "nodo": "J",
+              "g": 92.0,
+              "h": 15.0,
+              "f": 107.0
+            },
+            {
+              "nodo": "T",
+              "g": 118.0,
+              "h": 0.0,
+              "f": 118.0
+            }
+          ]
+        }
+      }
+    },
+    "limite_personalizado": {
+      "greedy": {
+        "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+        "criterio": "f(n) = h(n)",
+        "heuristica": {
+          "tipo": "saltos",
+          "formula": "h(n) = 12 · saltos(n, AX)",
+          "escala": 12.0
+        },
+        "origen": "A",
+        "destino": "AX",
+        "limite_nodos": 5,
+        "nodos_visitados": 5,
+        "solucion": false,
+        "ruta": [],
+        "costo": null,
+        "motivo": "Se alcanzó el límite de 5 nodos visitados sin llegar a AX.",
+        "T(n)": {
+          "notacion": "O(b^m)",
+          "b": 3,
+          "profundidad": 8,
+          "cota": 6561,
+          "nodos_generados": 8,
+          "tiempo_ms": 0.0072
+        },
+        "S(n)": {
+          "notacion": "O(b^m)",
+          "b": 3,
+          "profundidad": 8,
+          "cota": 6561,
+          "max_frontera": 4,
+          "max_nodos_en_memoria": 8
+        },
+        "traza": [
+          {
+            "nodo": "A",
+            "g": 0.0,
+            "h": 84.0,
+            "f": 84.0
+          },
+          {
+            "nodo": "F",
+            "g": 28.0,
+            "h": 72.0,
+            "f": 72.0
+          },
+          {
+            "nodo": "K",
+            "g": 63.0,
+            "h": 60.0,
+            "f": 60.0
+          },
+          {
+            "nodo": "R",
+            "g": 87.0,
+            "h": 48.0,
+            "f": 48.0
+          },
+          {
+            "nodo": "AD",
+            "g": 113.0,
+            "h": 36.0,
+            "f": 36.0
+          }
+        ]
+      },
+      "star": {
+        "algoritmo": "Búsqueda A*",
+        "criterio": "f(n) = g(n) + h(n)",
+        "heuristica": {
+          "tipo": "saltos",
+          "formula": "h(n) = 12 · saltos(n, AX)",
+          "escala": 12.0
+        },
+        "origen": "A",
+        "destino": "AX",
+        "limite_nodos": 5,
+        "nodos_visitados": 5,
+        "solucion": false,
+        "ruta": [],
+        "costo": null,
+        "motivo": "Se alcanzó el límite de 5 nodos visitados sin llegar a AX.",
+        "T(n)": {
+          "notacion": "O(b^d)",
+          "b": 3,
+          "profundidad": 3,
+          "cota": 27,
+          "nodos_generados": 9,
+          "tiempo_ms": 0.0092
+        },
+        "S(n)": {
+          "notacion": "O(b^d)",
+          "b": 3,
+          "profundidad": 3,
+          "cota": 27,
+          "max_frontera": 5,
+          "max_nodos_en_memoria": 9
+        },
+        "traza": [
+          {
+            "nodo": "A",
+            "g": 0.0,
+            "h": 84.0,
+            "f": 84.0
+          },
+          {
+            "nodo": "F",
+            "g": 28.0,
+            "h": 72.0,
+            "f": 100.0
+          },
+          {
+            "nodo": "G",
+            "g": 43.0,
+            "h": 72.0,
+            "f": 115.0
+          },
+          {
+            "nodo": "B",
+            "g": 45.0,
+            "h": 72.0,
+            "f": 117.0
+          },
+          {
+            "nodo": "K",
+            "g": 63.0,
+            "h": 60.0,
+            "f": 123.0
+          }
+        ]
+      }
+    },
+    "matriz": {
+      "peticion": {
+        "nodos": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
+        ],
+        "matriz_adyacencia": [
+          [
+            0,
+            15,
+            22,
+            10,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            35,
+            18,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            20,
+            0,
+            45,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            28,
+            30,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            12,
+            25,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            40,
+            15,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            10,
+            50
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            14
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "greedy": {
+        "algoritmo": "Búsqueda voraz (Greedy Best-First)",
+        "criterio": "f(n) = h(n)",
+        "heuristica": {
+          "tipo": "saltos",
+          "formula": "h(n) = 8 · saltos(n, J)",
+          "escala": 8.0
+        },
+        "origen": "A",
+        "destino": "J",
+        "limite_nodos": 8,
+        "nodos_visitados": 4,
+        "solucion": true,
+        "ruta": [
+          "A",
+          "D",
+          "G",
+          "J"
+        ],
+        "costo": 90.0,
+        "motivo": "Se llegó a J con costo 90.",
+        "T(n)": {
+          "notacion": "O(b^m)",
+          "b": 3,
+          "profundidad": 4,
+          "cota": 81,
+          "nodos_generados": 8,
+          "tiempo_ms": 0.0076
+        },
+        "S(n)": {
+          "notacion": "O(b^m)",
+          "b": 3,
+          "profundidad": 4,
+          "cota": 81,
+          "max_frontera": 5,
+          "max_nodos_en_memoria": 8
+        },
+        "traza": [
+          {
+            "nodo": "A",
+            "g": 0.0,
+            "h": 24.0,
+            "f": 24.0
+          },
+          {
+            "nodo": "D",
+            "g": 10.0,
+            "h": 16.0,
+            "f": 16.0
+          },
+          {
+            "nodo": "G",
+            "g": 40.0,
+            "h": 8.0,
+            "f": 8.0
+          },
+          {
+            "nodo": "J",
+            "g": 90.0,
+            "h": 0.0,
+            "f": 0.0
+          }
+        ]
+      },
+      "star": {
+        "algoritmo": "Búsqueda A*",
+        "criterio": "f(n) = g(n) + h(n)",
+        "heuristica": {
+          "tipo": "saltos",
+          "formula": "h(n) = 8 · saltos(n, J)",
+          "escala": 8.0
+        },
+        "origen": "A",
+        "destino": "J",
+        "limite_nodos": 8,
+        "nodos_visitados": 8,
+        "solucion": true,
+        "ruta": [
+          "A",
+          "B",
+          "F",
+          "I",
+          "J"
+        ],
+        "costo": 56.0,
+        "motivo": "Se llegó a J con costo 56.",
+        "T(n)": {
+          "notacion": "O(b^d)",
+          "b": 3,
+          "profundidad": 4,
+          "cota": 81,
+          "nodos_generados": 13,
+          "tiempo_ms": 0.0134
+        },
+        "S(n)": {
+          "notacion": "O(b^d)",
+          "b": 3,
+          "profundidad": 4,
+          "cota": 81,
+          "max_frontera": 4,
+          "max_nodos_en_memoria": 10
+        },
+        "traza": [
+          {
+            "nodo": "A",
+            "g": 0.0,
+            "h": 24.0,
+            "f": 24.0
+          },
+          {
+            "nodo": "D",
+            "g": 10.0,
+            "h": 16.0,
+            "f": 26.0
+          },
+          {
+            "nodo": "C",
+            "g": 22.0,
+            "h": 16.0,
+            "f": 38.0
+          },
+          {
+            "nodo": "B",
+            "g": 15.0,
+            "h": 24.0,
+            "f": 39.0
+          },
+          {
+            "nodo": "G",
+            "g": 40.0,
+            "h": 8.0,
+            "f": 48.0
+          },
+          {
+            "nodo": "F",
+            "g": 33.0,
+            "h": 16.0,
+            "f": 49.0
+          },
+          {
+            "nodo": "I",
+            "g": 48.0,
+            "h": 8.0,
+            "f": 56.0
+          },
+          {
+            "nodo": "J",
+            "g": 56.0,
+            "h": 0.0,
+            "f": 56.0
+          }
+        ]
+      }
+    },
+    "errores": {
+      "origen_inexistente": {
+        "detail": [
+          {
+            "type": "value_error",
+            "loc": [
+              "body"
+            ],
+            "msg": "Value error, El origen 'Z' no es un nodo del grafo.",
+            "input": {
+              "lista_adyacencia": {
+                "A": [
+                  [
+                    "B",
+                    15
+                  ],
+                  [
+                    "C",
+                    22
+                  ],
+                  [
+                    "D",
+                    10
+                  ]
+                ],
+                "B": [
+                  [
+                    "E",
+                    35
+                  ],
+                  [
+                    "F",
+                    18
+                  ]
+                ],
+                "C": [
+                  [
+                    "E",
+                    20
+                  ],
+                  [
+                    "G",
+                    45
+                  ]
+                ],
+                "D": [
+                  [
+                    "F",
+                    28
+                  ],
+                  [
+                    "G",
+                    30
+                  ]
+                ],
+                "E": [
+                  [
+                    "H",
+                    12
+                  ],
+                  [
+                    "I",
+                    25
+                  ]
+                ],
+                "F": [
+                  [
+                    "H",
+                    40
+                  ],
+                  [
+                    "I",
+                    15
+                  ]
+                ],
+                "G": [
+                  [
+                    "I",
+                    10
+                  ],
+                  [
+                    "J",
+                    50
+                  ]
+                ],
+                "H": [
+                  [
+                    "J",
+                    14
+                  ]
+                ],
+                "I": [
+                  [
+                    "J",
+                    8
+                  ]
+                ],
+                "J": []
+              },
+              "origen": "Z",
+              "destino": "J"
+            },
+            "ctx": {
+              "error": {}
+            }
+          }
+        ]
+      },
+      "euclidiana_sin_coordenadas": {
+        "detail": [
+          {
+            "type": "value_error",
+            "loc": [
+              "body"
+            ],
+            "msg": "Value error, La heurística euclidiana requiere `coordenadas`: una posición [x, y] por nodo.",
+            "input": {
+              "lista_adyacencia": {
+                "A": [
+                  [
+                    "B",
+                    15
+                  ],
+                  [
+                    "C",
+                    22
+                  ],
+                  [
+                    "D",
+                    10
+                  ]
+                ],
+                "B": [
+                  [
+                    "E",
+                    35
+                  ],
+                  [
+                    "F",
+                    18
+                  ]
+                ],
+                "C": [
+                  [
+                    "E",
+                    20
+                  ],
+                  [
+                    "G",
+                    45
+                  ]
+                ],
+                "D": [
+                  [
+                    "F",
+                    28
+                  ],
+                  [
+                    "G",
+                    30
+                  ]
+                ],
+                "E": [
+                  [
+                    "H",
+                    12
+                  ],
+                  [
+                    "I",
+                    25
+                  ]
+                ],
+                "F": [
+                  [
+                    "H",
+                    40
+                  ],
+                  [
+                    "I",
+                    15
+                  ]
+                ],
+                "G": [
+                  [
+                    "I",
+                    10
+                  ],
+                  [
+                    "J",
+                    50
+                  ]
+                ],
+                "H": [
+                  [
+                    "J",
+                    14
+                  ]
+                ],
+                "I": [
+                  [
+                    "J",
+                    8
+                  ]
+                ],
+                "J": []
+              },
+              "origen": "A",
+              "destino": "J",
+              "heuristica": "euclidiana"
+            },
+            "ctx": {
+              "error": {}
+            }
+          }
+        ]
+      }
+    }
+  }
+}
