@@ -1,0 +1,2740 @@
+{
+  "pruebas": {
+    "grafo-5": {
+      "dijkstra": {
+        "algoritmo": "Dijkstra",
+        "clase": "P",
+        "complejidad": "O((V + E) log V)",
+        "origen": "A",
+        "destino": "E",
+        "num_nodos": 5,
+        "solucion": true,
+        "ruta": [
+          "A",
+          "C",
+          "E"
+        ],
+        "costo": 49.0,
+        "nodos_recorridos": 3,
+        "operaciones": 7,
+        "tiempo_ms": 0.0112,
+        "memoria_kb": 0.691,
+        "motivo": "Camino de menor costo de A a E: 49."
+      },
+      "tsp": {
+        "algoritmo": "TSP exacto (programación dinámica de Held-Karp)",
+        "clase": "NP-difícil",
+        "complejidad": "O(n² · 2ⁿ) tiempo, O(n · 2ⁿ) memoria",
+        "origen": "A",
+        "destino": null,
+        "num_nodos": 5,
+        "solucion": true,
+        "ruta": [
+          "A",
+          "D",
+          "B",
+          "E",
+          "C",
+          "A"
+        ],
+        "costo": 225.0,
+        "nodos_recorridos": 28,
+        "operaciones": 39,
+        "tiempo_ms": 0.0296,
+        "memoria_kb": 2.268,
+        "motivo": "Ciclo óptimo de costo 225 (28 estados evaluados)."
+      },
+      "tsp/greedy": {
+        "algoritmo": "TSP con heurística voraz (vecino más cercano)",
+        "clase": "Heurística (aproximación polinomial)",
+        "complejidad": "O(n²)",
+        "origen": "A",
+        "destino": null,
+        "num_nodos": 5,
+        "solucion": true,
+        "ruta": [
+          "A",
+          "C",
+          "E",
+          "D",
+          "B",
+          "A"
+        ],
+        "costo": 265.0,
+        "nodos_recorridos": 5,
+        "operaciones": 18,
+        "tiempo_ms": 0.0062,
+        "memoria_kb": 1.19,
+        "motivo": "Ciclo encontrado con costo 265 (no necesariamente óptimo)."
+      }
+    },
+    "grafo-10": {
+      "dijkstra": {
+        "algoritmo": "Dijkstra",
+        "clase": "P",
+        "complejidad": "O((V + E) log V)",
+        "origen": "A",
+        "destino": "J",
+        "num_nodos": 10,
+        "solucion": true,
+        "ruta": [
+          "A",
+          "I",
+          "D",
+          "J"
+        ],
+        "costo": 23.0,
+        "nodos_recorridos": 6,
+        "operaciones": 40,
+        "tiempo_ms": 0.0101,
+        "memoria_kb": 1.699,
+        "motivo": "Camino de menor costo de A a J: 23."
+      },
+      "tsp": {
+        "algoritmo": "TSP exacto (programación dinámica de Held-Karp)",
+        "clase": "NP-difícil",
+        "complejidad": "O(n² · 2ⁿ) tiempo, O(n · 2ⁿ) memoria",
+        "origen": "A",
+        "destino": null,
+        "num_nodos": 10,
+        "solucion": true,
+        "ruta": [
+          "A",
+          "I",
+          "G",
+          "F",
+          "H",
+          "B",
+          "C",
+          "J",
+          "D",
+          "E",
+          "A"
+        ],
+        "costo": 331.0,
+        "nodos_recorridos": 2193,
+        "operaciones": 7344,
+        "tiempo_ms": 1.609,
+        "memoria_kb": 183.395,
+        "motivo": "Ciclo óptimo de costo 331 (2193 estados evaluados)."
+      },
+      "tsp/greedy": {
+        "algoritmo": "TSP con heurística voraz (vecino más cercano)",
+        "clase": "Heurística (aproximación polinomial)",
+        "complejidad": "O(n²)",
+        "origen": "A",
+        "destino": null,
+        "num_nodos": 10,
+        "solucion": true,
+        "ruta": [
+          "A",
+          "I",
+          "C",
+          "B",
+          "H",
+          "J",
+          "D",
+          "E",
+          "F",
+          "G",
+          "A"
+        ],
+        "costo": 390.0,
+        "nodos_recorridos": 10,
+        "operaciones": 76,
+        "tiempo_ms": 0.008,
+        "memoria_kb": 1.253,
+        "motivo": "Ciclo encontrado con costo 390 (no necesariamente óptimo)."
+      }
+    },
+    "grafo-15": {
+      "dijkstra": {
+        "algoritmo": "Dijkstra",
+        "clase": "P",
+        "complejidad": "O((V + E) log V)",
+        "origen": "A",
+        "destino": "O",
+        "num_nodos": 15,
+        "solucion": true,
+        "ruta": [
+          "A",
+          "F",
+          "B",
+          "O"
+        ],
+        "costo": 40.0,
+        "nodos_recorridos": 12,
+        "operaciones": 118,
+        "tiempo_ms": 0.0194,
+        "memoria_kb": 2.137,
+        "motivo": "Camino de menor costo de A a O: 40."
+      },
+      "tsp": {
+        "algoritmo": "TSP exacto (programación dinámica de Held-Karp)",
+        "clase": "NP-difícil",
+        "complejidad": "O(n² · 2ⁿ) tiempo, O(n · 2ⁿ) memoria",
+        "origen": "A",
+        "destino": null,
+        "num_nodos": 15,
+        "solucion": true,
+        "ruta": [
+          "A",
+          "G",
+          "C",
+          "M",
+          "O",
+          "N",
+          "D",
+          "K",
+          "B",
+          "H",
+          "I",
+          "J",
+          "L",
+          "E",
+          "F",
+          "A"
+        ],
+        "costo": 274.0,
+        "nodos_recorridos": 111790,
+        "operaciones": 567778,
+        "tiempo_ms": 108.4164,
+        "memoria_kb": 8259.975,
+        "motivo": "Ciclo óptimo de costo 274 (111790 estados evaluados)."
+      },
+      "tsp/greedy": {
+        "algoritmo": "TSP con heurística voraz (vecino más cercano)",
+        "clase": "Heurística (aproximación polinomial)",
+        "complejidad": "O(n²)",
+        "origen": "A",
+        "destino": null,
+        "num_nodos": 15,
+        "solucion": true,
+        "ruta": [
+          "A",
+          "F",
+          "B",
+          "H",
+          "I",
+          "J",
+          "L",
+          "E",
+          "N",
+          "D",
+          "K",
+          "O",
+          "M",
+          "C",
+          "G",
+          "A"
+        ],
+        "costo": 291.0,
+        "nodos_recorridos": 15,
+        "operaciones": 162,
+        "tiempo_ms": 0.0115,
+        "memoria_kb": 1.253,
+        "motivo": "Ciclo encontrado con costo 291 (no necesariamente óptimo)."
+      }
+    }
+  },
+  "adicionales": {
+    "voraz_sin_salida": {
+      "grafo": {
+        "n": 10,
+        "num_aristas": 27,
+        "densidad_real": 0.6,
+        "dirigido": false,
+        "semilla": 1,
+        "lista_adyacencia": {
+          "A": [
+            [
+              "B",
+              51
+            ],
+            [
+              "C",
+              76
+            ],
+            [
+              "D",
+              5
+            ],
+            [
+              "E",
+              62
+            ],
+            [
+              "G",
+              32
+            ],
+            [
+              "H",
+              96
+            ]
+          ],
+          "B": [
+            [
+              "C",
+              52
+            ],
+            [
+              "F",
+              54
+            ],
+            [
+              "G",
+              86
+            ],
+            [
+              "H",
+              23
+            ],
+            [
+              "I",
+              47
+            ],
+            [
+              "J",
+              71
+            ]
+          ],
+          "C": [
+            [
+              "D",
+              90
+            ],
+            [
+              "H",
+              100
+            ]
+          ],
+          "D": [
+            [
+              "E",
+              87
+            ],
+            [
+              "F",
+              95
+            ],
+            [
+              "G",
+              48
+            ],
+            [
+              "I",
+              12
+            ]
+          ],
+          "E": [
+            [
+              "F",
+              57
+            ],
+            [
+              "H",
+              85
+            ],
+            [
+              "J",
+              66
+            ]
+          ],
+          "F": [
+            [
+              "H",
+              14
+            ],
+            [
+              "J",
+              100
+            ]
+          ],
+          "G": [
+            [
+              "H",
+              21
+            ],
+            [
+              "J",
+              67
+            ]
+          ],
+          "H": [
+            [
+              "I",
+              51
+            ]
+          ],
+          "I": [
+            [
+              "J",
+              48
+            ]
+          ],
+          "J": []
+        },
+        "coordenadas": {
+          "A": [
+            17,
+            72
+          ],
+          "B": [
+            97,
+            8
+          ],
+          "C": [
+            32,
+            15
+          ],
+          "D": [
+            63,
+            97
+          ],
+          "E": [
+            57,
+            60
+          ],
+          "F": [
+            83,
+            48
+          ],
+          "G": [
+            100,
+            26
+          ],
+          "H": [
+            12,
+            62
+          ],
+          "I": [
+            3,
+            49
+          ],
+          "J": [
+            55,
+            77
+          ]
+        }
+      },
+      "tsp": {
+        "algoritmo": "TSP exacto (programación dinámica de Held-Karp)",
+        "clase": "NP-difícil",
+        "complejidad": "O(n² · 2ⁿ) tiempo, O(n · 2ⁿ) memoria",
+        "origen": "A",
+        "destino": null,
+        "num_nodos": 10,
+        "solucion": true,
+        "ruta": [
+          "A",
+          "G",
+          "D",
+          "I",
+          "J",
+          "E",
+          "F",
+          "H",
+          "B",
+          "C",
+          "A"
+        ],
+        "costo": 428.0,
+        "nodos_recorridos": 1390,
+        "operaciones": 2931,
+        "tiempo_ms": 0.8337,
+        "memoria_kb": 164.598,
+        "motivo": "Ciclo óptimo de costo 428 (1390 estados evaluados)."
+      },
+      "tsp/greedy": {
+        "algoritmo": "TSP con heurística voraz (vecino más cercano)",
+        "clase": "Heurística (aproximación polinomial)",
+        "complejidad": "O(n²)",
+        "origen": "A",
+        "destino": null,
+        "num_nodos": 10,
+        "solucion": false,
+        "ruta": [],
+        "costo": null,
+        "nodos_recorridos": 9,
+        "operaciones": 50,
+        "tiempo_ms": 0.0059,
+        "memoria_kb": 1.41,
+        "motivo": "El agente quedó en G sin vecinos por visitar tras recorrer 9 de 10 nodos (A → D → I → B → H → F → E → J → G)."
+      }
+    },
+    "escalabilidad": {
+      "4": {
+        "dijkstra": {
+          "algoritmo": "Dijkstra",
+          "clase": "P",
+          "complejidad": "O((V + E) log V)",
+          "origen": "A",
+          "destino": "D",
+          "num_nodos": 4,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "D"
+          ],
+          "costo": 56.0,
+          "nodos_recorridos": 4,
+          "operaciones": 9,
+          "tiempo_ms": 0.0066,
+          "memoria_kb": 0.605,
+          "motivo": "Camino de menor costo de A a D: 56."
+        },
+        "tsp": {
+          "algoritmo": "TSP exacto (programación dinámica de Held-Karp)",
+          "clase": "NP-difícil",
+          "complejidad": "O(n² · 2ⁿ) tiempo, O(n · 2ⁿ) memoria",
+          "origen": "A",
+          "destino": null,
+          "num_nodos": 4,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "D",
+            "C",
+            "B",
+            "A"
+          ],
+          "costo": 237.0,
+          "nodos_recorridos": 12,
+          "operaciones": 12,
+          "tiempo_ms": 0.0125,
+          "memoria_kb": 1.307,
+          "motivo": "Ciclo óptimo de costo 237 (12 estados evaluados)."
+        },
+        "tsp/greedy": {
+          "algoritmo": "TSP con heurística voraz (vecino más cercano)",
+          "clase": "Heurística (aproximación polinomial)",
+          "complejidad": "O(n²)",
+          "origen": "A",
+          "destino": null,
+          "num_nodos": 4,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "A"
+          ],
+          "costo": 237.0,
+          "nodos_recorridos": 4,
+          "operaciones": 12,
+          "tiempo_ms": 0.0029,
+          "memoria_kb": 0.69,
+          "motivo": "Ciclo encontrado con costo 237 (no necesariamente óptimo)."
+        }
+      },
+      "6": {
+        "dijkstra": {
+          "algoritmo": "Dijkstra",
+          "clase": "P",
+          "complejidad": "O((V + E) log V)",
+          "origen": "A",
+          "destino": "F",
+          "num_nodos": 6,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "F"
+          ],
+          "costo": 49.0,
+          "nodos_recorridos": 6,
+          "operaciones": 25,
+          "tiempo_ms": 0.0067,
+          "memoria_kb": 1.574,
+          "motivo": "Camino de menor costo de A a F: 49."
+        },
+        "tsp": {
+          "algoritmo": "TSP exacto (programación dinámica de Held-Karp)",
+          "clase": "NP-difícil",
+          "complejidad": "O(n² · 2ⁿ) tiempo, O(n · 2ⁿ) memoria",
+          "origen": "A",
+          "destino": null,
+          "num_nodos": 6,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "E",
+            "F",
+            "C",
+            "D",
+            "B",
+            "A"
+          ],
+          "costo": 131.0,
+          "nodos_recorridos": 80,
+          "operaciones": 160,
+          "tiempo_ms": 0.043,
+          "memoria_kb": 4.174,
+          "motivo": "Ciclo óptimo de costo 131 (80 estados evaluados)."
+        },
+        "tsp/greedy": {
+          "algoritmo": "TSP con heurística voraz (vecino más cercano)",
+          "clase": "Heurística (aproximación polinomial)",
+          "complejidad": "O(n²)",
+          "origen": "A",
+          "destino": null,
+          "num_nodos": 6,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "E",
+            "B",
+            "D",
+            "C",
+            "F",
+            "A"
+          ],
+          "costo": 167.0,
+          "nodos_recorridos": 6,
+          "operaciones": 30,
+          "tiempo_ms": 0.0049,
+          "memoria_kb": 1.19,
+          "motivo": "Ciclo encontrado con costo 167 (no necesariamente óptimo)."
+        }
+      },
+      "8": {
+        "dijkstra": {
+          "algoritmo": "Dijkstra",
+          "clase": "P",
+          "complejidad": "O((V + E) log V)",
+          "origen": "A",
+          "destino": "H",
+          "num_nodos": 8,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "F",
+            "H"
+          ],
+          "costo": 18.0,
+          "nodos_recorridos": 4,
+          "operaciones": 21,
+          "tiempo_ms": 0.0079,
+          "memoria_kb": 1.082,
+          "motivo": "Camino de menor costo de A a H: 18."
+        },
+        "tsp": {
+          "algoritmo": "TSP exacto (programación dinámica de Held-Karp)",
+          "clase": "NP-difícil",
+          "complejidad": "O(n² · 2ⁿ) tiempo, O(n · 2ⁿ) memoria",
+          "origen": "A",
+          "destino": null,
+          "num_nodos": 8,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "F",
+            "H",
+            "C",
+            "G",
+            "D",
+            "E",
+            "B",
+            "A"
+          ],
+          "costo": 250.0,
+          "nodos_recorridos": 448,
+          "operaciones": 1344,
+          "tiempo_ms": 0.2436,
+          "memoria_kb": 35.933,
+          "motivo": "Ciclo óptimo de costo 250 (448 estados evaluados)."
+        },
+        "tsp/greedy": {
+          "algoritmo": "TSP con heurística voraz (vecino más cercano)",
+          "clase": "Heurística (aproximación polinomial)",
+          "complejidad": "O(n²)",
+          "origen": "A",
+          "destino": null,
+          "num_nodos": 8,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "B",
+            "E",
+            "D",
+            "G",
+            "H",
+            "F",
+            "C",
+            "A"
+          ],
+          "costo": 257.0,
+          "nodos_recorridos": 8,
+          "operaciones": 56,
+          "tiempo_ms": 0.0046,
+          "memoria_kb": 1.253,
+          "motivo": "Ciclo encontrado con costo 257 (no necesariamente óptimo)."
+        }
+      },
+      "10": {
+        "dijkstra": {
+          "algoritmo": "Dijkstra",
+          "clase": "P",
+          "complejidad": "O((V + E) log V)",
+          "origen": "A",
+          "destino": "J",
+          "num_nodos": 10,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "D",
+            "J"
+          ],
+          "costo": 9.0,
+          "nodos_recorridos": 3,
+          "operaciones": 18,
+          "tiempo_ms": 0.0088,
+          "memoria_kb": 1.144,
+          "motivo": "Camino de menor costo de A a J: 9."
+        },
+        "tsp": {
+          "algoritmo": "TSP exacto (programación dinámica de Held-Karp)",
+          "clase": "NP-difícil",
+          "complejidad": "O(n² · 2ⁿ) tiempo, O(n · 2ⁿ) memoria",
+          "origen": "A",
+          "destino": null,
+          "num_nodos": 10,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "F",
+            "I",
+            "G",
+            "E",
+            "B",
+            "C",
+            "H",
+            "J",
+            "D",
+            "A"
+          ],
+          "costo": 230.0,
+          "nodos_recorridos": 2304,
+          "operaciones": 9216,
+          "tiempo_ms": 1.4707,
+          "memoria_kb": 186.012,
+          "motivo": "Ciclo óptimo de costo 230 (2304 estados evaluados)."
+        },
+        "tsp/greedy": {
+          "algoritmo": "TSP con heurística voraz (vecino más cercano)",
+          "clase": "Heurística (aproximación polinomial)",
+          "complejidad": "O(n²)",
+          "origen": "A",
+          "destino": null,
+          "num_nodos": 10,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "D",
+            "J",
+            "H",
+            "C",
+            "B",
+            "E",
+            "G",
+            "I",
+            "F",
+            "A"
+          ],
+          "costo": 230.0,
+          "nodos_recorridos": 10,
+          "operaciones": 90,
+          "tiempo_ms": 0.0063,
+          "memoria_kb": 1.253,
+          "motivo": "Ciclo encontrado con costo 230 (no necesariamente óptimo)."
+        }
+      },
+      "12": {
+        "dijkstra": {
+          "algoritmo": "Dijkstra",
+          "clase": "P",
+          "complejidad": "O((V + E) log V)",
+          "origen": "A",
+          "destino": "L",
+          "num_nodos": 12,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "C",
+            "K",
+            "I",
+            "L"
+          ],
+          "costo": 24.0,
+          "nodos_recorridos": 7,
+          "operaciones": 66,
+          "tiempo_ms": 0.012,
+          "memoria_kb": 2.145,
+          "motivo": "Camino de menor costo de A a L: 24."
+        },
+        "tsp": {
+          "algoritmo": "TSP exacto (programación dinámica de Held-Karp)",
+          "clase": "NP-difícil",
+          "complejidad": "O(n² · 2ⁿ) tiempo, O(n · 2ⁿ) memoria",
+          "origen": "A",
+          "destino": null,
+          "num_nodos": 12,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "E",
+            "H",
+            "D",
+            "B",
+            "J",
+            "F",
+            "G",
+            "L",
+            "I",
+            "K",
+            "C",
+            "A"
+          ],
+          "costo": 196.0,
+          "nodos_recorridos": 11264,
+          "operaciones": 56320,
+          "tiempo_ms": 9.2521,
+          "memoria_kb": 871.81,
+          "motivo": "Ciclo óptimo de costo 196 (11264 estados evaluados)."
+        },
+        "tsp/greedy": {
+          "algoritmo": "TSP con heurística voraz (vecino más cercano)",
+          "clase": "Heurística (aproximación polinomial)",
+          "complejidad": "O(n²)",
+          "origen": "A",
+          "destino": null,
+          "num_nodos": 12,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "C",
+            "K",
+            "H",
+            "E",
+            "B",
+            "J",
+            "L",
+            "I",
+            "D",
+            "G",
+            "F",
+            "A"
+          ],
+          "costo": 306.0,
+          "nodos_recorridos": 12,
+          "operaciones": 132,
+          "tiempo_ms": 0.007,
+          "memoria_kb": 1.253,
+          "motivo": "Ciclo encontrado con costo 306 (no necesariamente óptimo)."
+        }
+      },
+      "14": {
+        "dijkstra": {
+          "algoritmo": "Dijkstra",
+          "clase": "P",
+          "complejidad": "O((V + E) log V)",
+          "origen": "A",
+          "destino": "N",
+          "num_nodos": 14,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "H",
+            "K",
+            "B",
+            "N"
+          ],
+          "costo": 21.0,
+          "nodos_recorridos": 11,
+          "operaciones": 130,
+          "tiempo_ms": 0.0167,
+          "memoria_kb": 2.207,
+          "motivo": "Camino de menor costo de A a N: 21."
+        },
+        "tsp": {
+          "algoritmo": "TSP exacto (programación dinámica de Held-Karp)",
+          "clase": "NP-difícil",
+          "complejidad": "O(n² · 2ⁿ) tiempo, O(n · 2ⁿ) memoria",
+          "origen": "A",
+          "destino": null,
+          "num_nodos": 14,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "M",
+            "I",
+            "K",
+            "B",
+            "N",
+            "G",
+            "C",
+            "E",
+            "F",
+            "J",
+            "D",
+            "L",
+            "H",
+            "A"
+          ],
+          "costo": 212.0,
+          "nodos_recorridos": 53248,
+          "operaciones": 319488,
+          "tiempo_ms": 50.1035,
+          "memoria_kb": 3935.927,
+          "motivo": "Ciclo óptimo de costo 212 (53248 estados evaluados)."
+        },
+        "tsp/greedy": {
+          "algoritmo": "TSP con heurística voraz (vecino más cercano)",
+          "clase": "Heurística (aproximación polinomial)",
+          "complejidad": "O(n²)",
+          "origen": "A",
+          "destino": null,
+          "num_nodos": 14,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "H",
+            "K",
+            "I",
+            "C",
+            "G",
+            "J",
+            "F",
+            "E",
+            "D",
+            "B",
+            "N",
+            "M",
+            "L",
+            "A"
+          ],
+          "costo": 304.0,
+          "nodos_recorridos": 14,
+          "operaciones": 182,
+          "tiempo_ms": 0.0147,
+          "memoria_kb": 1.276,
+          "motivo": "Ciclo encontrado con costo 304 (no necesariamente óptimo)."
+        }
+      },
+      "16": {
+        "dijkstra": {
+          "algoritmo": "Dijkstra",
+          "clase": "P",
+          "complejidad": "O((V + E) log V)",
+          "origen": "A",
+          "destino": "P",
+          "num_nodos": 16,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "M",
+            "F",
+            "P"
+          ],
+          "costo": 26.0,
+          "nodos_recorridos": 12,
+          "operaciones": 165,
+          "tiempo_ms": 0.0207,
+          "memoria_kb": 2.199,
+          "motivo": "Camino de menor costo de A a P: 26."
+        },
+        "tsp": {
+          "algoritmo": "TSP exacto (programación dinámica de Held-Karp)",
+          "clase": "NP-difícil",
+          "complejidad": "O(n² · 2ⁿ) tiempo, O(n · 2ⁿ) memoria",
+          "origen": "A",
+          "destino": null,
+          "num_nodos": 16,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "M",
+            "H",
+            "I",
+            "G",
+            "E",
+            "C",
+            "D",
+            "J",
+            "N",
+            "K",
+            "P",
+            "F",
+            "B",
+            "O",
+            "L",
+            "A"
+          ],
+          "costo": 173.0,
+          "nodos_recorridos": 245760,
+          "operaciones": 1720320,
+          "tiempo_ms": 274.9373,
+          "memoria_kb": 17563.225,
+          "motivo": "Ciclo óptimo de costo 173 (245760 estados evaluados)."
+        },
+        "tsp/greedy": {
+          "algoritmo": "TSP con heurística voraz (vecino más cercano)",
+          "clase": "Heurística (aproximación polinomial)",
+          "complejidad": "O(n²)",
+          "origen": "A",
+          "destino": null,
+          "num_nodos": 16,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "M",
+            "B",
+            "O",
+            "E",
+            "C",
+            "D",
+            "J",
+            "N",
+            "F",
+            "P",
+            "K",
+            "H",
+            "I",
+            "L",
+            "G",
+            "A"
+          ],
+          "costo": 221.0,
+          "nodos_recorridos": 16,
+          "operaciones": 240,
+          "tiempo_ms": 0.0125,
+          "memoria_kb": 1.339,
+          "motivo": "Ciclo encontrado con costo 221 (no necesariamente óptimo)."
+        }
+      },
+      "18": {
+        "dijkstra": {
+          "algoritmo": "Dijkstra",
+          "clase": "P",
+          "complejidad": "O((V + E) log V)",
+          "origen": "A",
+          "destino": "R",
+          "num_nodos": 18,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "O",
+            "K",
+            "R"
+          ],
+          "costo": 6.0,
+          "nodos_recorridos": 5,
+          "operaciones": 68,
+          "tiempo_ms": 0.0148,
+          "memoria_kb": 2.198,
+          "motivo": "Camino de menor costo de A a R: 6."
+        },
+        "tsp": {
+          "algoritmo": "TSP exacto (programación dinámica de Held-Karp)",
+          "clase": "NP-difícil",
+          "complejidad": "O(n² · 2ⁿ) tiempo, O(n · 2ⁿ) memoria",
+          "origen": "A",
+          "destino": null,
+          "num_nodos": 18,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "Q",
+            "O",
+            "E",
+            "D",
+            "J",
+            "P",
+            "L",
+            "M",
+            "I",
+            "H",
+            "G",
+            "F",
+            "B",
+            "K",
+            "R",
+            "N",
+            "C",
+            "A"
+          ],
+          "costo": 200.0,
+          "nodos_recorridos": 1114112,
+          "operaciones": 8912896,
+          "tiempo_ms": 1358.014,
+          "memoria_kb": 77492.624,
+          "motivo": "Ciclo óptimo de costo 200 (1114112 estados evaluados)."
+        },
+        "tsp/greedy": {
+          "algoritmo": "TSP con heurística voraz (vecino más cercano)",
+          "clase": "Heurística (aproximación polinomial)",
+          "complejidad": "O(n²)",
+          "origen": "A",
+          "destino": null,
+          "num_nodos": 18,
+          "solucion": true,
+          "ruta": [
+            "A",
+            "O",
+            "K",
+            "R",
+            "I",
+            "M",
+            "E",
+            "D",
+            "P",
+            "L",
+            "Q",
+            "N",
+            "C",
+            "H",
+            "G",
+            "F",
+            "B",
+            "J",
+            "A"
+          ],
+          "costo": 277.0,
+          "nodos_recorridos": 18,
+          "operaciones": 306,
+          "tiempo_ms": 0.0147,
+          "memoria_kb": 1.339,
+          "motivo": "Ciclo encontrado con costo 277 (no necesariamente óptimo)."
+        }
+      }
+    },
+    "errores": {
+      "tsp_exacto_19_nodos": {
+        "detail": [
+          {
+            "type": "value_error",
+            "loc": [
+              "body"
+            ],
+            "msg": "Value error, El TSP exacto admite hasta 18 nodos y el grafo tiene 19: su costo es O(n² · 2ⁿ). Usa /graph/tsp/greedy para grafos grandes.",
+            "input": {
+              "n": 19,
+              "num_aristas": 171,
+              "densidad_real": 1.0,
+              "dirigido": false,
+              "semilla": 1,
+              "lista_adyacencia": {
+                "A": [
+                  [
+                    "B",
+                    45
+                  ],
+                  [
+                    "C",
+                    13
+                  ],
+                  [
+                    "D",
+                    27
+                  ],
+                  [
+                    "E",
+                    74
+                  ],
+                  [
+                    "F",
+                    87
+                  ],
+                  [
+                    "G",
+                    56
+                  ],
+                  [
+                    "H",
+                    76
+                  ],
+                  [
+                    "I",
+                    25
+                  ],
+                  [
+                    "J",
+                    64
+                  ],
+                  [
+                    "K",
+                    14
+                  ],
+                  [
+                    "L",
+                    86
+                  ],
+                  [
+                    "M",
+                    50
+                  ],
+                  [
+                    "N",
+                    38
+                  ],
+                  [
+                    "O",
+                    65
+                  ],
+                  [
+                    "P",
+                    64
+                  ],
+                  [
+                    "Q",
+                    3
+                  ],
+                  [
+                    "R",
+                    42
+                  ],
+                  [
+                    "S",
+                    79
+                  ]
+                ],
+                "B": [
+                  [
+                    "C",
+                    52
+                  ],
+                  [
+                    "D",
+                    37
+                  ],
+                  [
+                    "E",
+                    3
+                  ],
+                  [
+                    "F",
+                    21
+                  ],
+                  [
+                    "G",
+                    26
+                  ],
+                  [
+                    "H",
+                    42
+                  ],
+                  [
+                    "I",
+                    73
+                  ],
+                  [
+                    "J",
+                    18
+                  ],
+                  [
+                    "K",
+                    44
+                  ],
+                  [
+                    "L",
+                    55
+                  ],
+                  [
+                    "M",
+                    28
+                  ],
+                  [
+                    "N",
+                    35
+                  ],
+                  [
+                    "O",
+                    87
+                  ],
+                  [
+                    "P",
+                    13
+                  ],
+                  [
+                    "Q",
+                    49
+                  ],
+                  [
+                    "R",
+                    71
+                  ],
+                  [
+                    "S",
+                    45
+                  ]
+                ],
+                "C": [
+                  [
+                    "D",
+                    88
+                  ],
+                  [
+                    "E",
+                    69
+                  ],
+                  [
+                    "F",
+                    63
+                  ],
+                  [
+                    "G",
+                    99
+                  ],
+                  [
+                    "H",
+                    69
+                  ],
+                  [
+                    "I",
+                    31
+                  ],
+                  [
+                    "J",
+                    9
+                  ],
+                  [
+                    "K",
+                    93
+                  ],
+                  [
+                    "L",
+                    6
+                  ],
+                  [
+                    "M",
+                    11
+                  ],
+                  [
+                    "N",
+                    18
+                  ],
+                  [
+                    "O",
+                    22
+                  ],
+                  [
+                    "P",
+                    22
+                  ],
+                  [
+                    "Q",
+                    69
+                  ],
+                  [
+                    "R",
+                    28
+                  ],
+                  [
+                    "S",
+                    35
+                  ]
+                ],
+                "D": [
+                  [
+                    "E",
+                    98
+                  ],
+                  [
+                    "F",
+                    43
+                  ],
+                  [
+                    "G",
+                    77
+                  ],
+                  [
+                    "H",
+                    65
+                  ],
+                  [
+                    "I",
+                    33
+                  ],
+                  [
+                    "J",
+                    48
+                  ],
+                  [
+                    "K",
+                    44
+                  ],
+                  [
+                    "L",
+                    44
+                  ],
+                  [
+                    "M",
+                    15
+                  ],
+                  [
+                    "N",
+                    38
+                  ],
+                  [
+                    "O",
+                    31
+                  ],
+                  [
+                    "P",
+                    78
+                  ],
+                  [
+                    "Q",
+                    100
+                  ],
+                  [
+                    "R",
+                    92
+                  ],
+                  [
+                    "S",
+                    63
+                  ]
+                ],
+                "E": [
+                  [
+                    "F",
+                    18
+                  ],
+                  [
+                    "G",
+                    75
+                  ],
+                  [
+                    "H",
+                    71
+                  ],
+                  [
+                    "I",
+                    99
+                  ],
+                  [
+                    "J",
+                    14
+                  ],
+                  [
+                    "K",
+                    42
+                  ],
+                  [
+                    "L",
+                    6
+                  ],
+                  [
+                    "M",
+                    53
+                  ],
+                  [
+                    "N",
+                    10
+                  ],
+                  [
+                    "O",
+                    49
+                  ],
+                  [
+                    "P",
+                    19
+                  ],
+                  [
+                    "Q",
+                    17
+                  ],
+                  [
+                    "R",
+                    44
+                  ],
+                  [
+                    "S",
+                    15
+                  ]
+                ],
+                "F": [
+                  [
+                    "G",
+                    79
+                  ],
+                  [
+                    "H",
+                    76
+                  ],
+                  [
+                    "I",
+                    49
+                  ],
+                  [
+                    "J",
+                    10
+                  ],
+                  [
+                    "K",
+                    74
+                  ],
+                  [
+                    "L",
+                    71
+                  ],
+                  [
+                    "M",
+                    29
+                  ],
+                  [
+                    "N",
+                    73
+                  ],
+                  [
+                    "O",
+                    11
+                  ],
+                  [
+                    "P",
+                    35
+                  ],
+                  [
+                    "Q",
+                    47
+                  ],
+                  [
+                    "R",
+                    38
+                  ],
+                  [
+                    "S",
+                    73
+                  ]
+                ],
+                "G": [
+                  [
+                    "H",
+                    69
+                  ],
+                  [
+                    "I",
+                    15
+                  ],
+                  [
+                    "J",
+                    59
+                  ],
+                  [
+                    "K",
+                    36
+                  ],
+                  [
+                    "L",
+                    14
+                  ],
+                  [
+                    "M",
+                    6
+                  ],
+                  [
+                    "N",
+                    38
+                  ],
+                  [
+                    "O",
+                    2
+                  ],
+                  [
+                    "P",
+                    79
+                  ],
+                  [
+                    "Q",
+                    86
+                  ],
+                  [
+                    "R",
+                    2
+                  ],
+                  [
+                    "S",
+                    12
+                  ]
+                ],
+                "H": [
+                  [
+                    "I",
+                    53
+                  ],
+                  [
+                    "J",
+                    15
+                  ],
+                  [
+                    "K",
+                    6
+                  ],
+                  [
+                    "L",
+                    25
+                  ],
+                  [
+                    "M",
+                    31
+                  ],
+                  [
+                    "N",
+                    76
+                  ],
+                  [
+                    "O",
+                    54
+                  ],
+                  [
+                    "P",
+                    21
+                  ],
+                  [
+                    "Q",
+                    15
+                  ],
+                  [
+                    "R",
+                    58
+                  ],
+                  [
+                    "S",
+                    22
+                  ]
+                ],
+                "I": [
+                  [
+                    "J",
+                    88
+                  ],
+                  [
+                    "K",
+                    31
+                  ],
+                  [
+                    "L",
+                    21
+                  ],
+                  [
+                    "M",
+                    96
+                  ],
+                  [
+                    "N",
+                    14
+                  ],
+                  [
+                    "O",
+                    56
+                  ],
+                  [
+                    "P",
+                    49
+                  ],
+                  [
+                    "Q",
+                    70
+                  ],
+                  [
+                    "R",
+                    38
+                  ],
+                  [
+                    "S",
+                    71
+                  ]
+                ],
+                "J": [
+                  [
+                    "K",
+                    33
+                  ],
+                  [
+                    "L",
+                    92
+                  ],
+                  [
+                    "M",
+                    62
+                  ],
+                  [
+                    "N",
+                    41
+                  ],
+                  [
+                    "O",
+                    13
+                  ],
+                  [
+                    "P",
+                    27
+                  ],
+                  [
+                    "Q",
+                    84
+                  ],
+                  [
+                    "R",
+                    41
+                  ],
+                  [
+                    "S",
+                    6
+                  ]
+                ],
+                "K": [
+                  [
+                    "L",
+                    4
+                  ],
+                  [
+                    "M",
+                    2
+                  ],
+                  [
+                    "N",
+                    38
+                  ],
+                  [
+                    "O",
+                    93
+                  ],
+                  [
+                    "P",
+                    77
+                  ],
+                  [
+                    "Q",
+                    41
+                  ],
+                  [
+                    "R",
+                    58
+                  ],
+                  [
+                    "S",
+                    51
+                  ]
+                ],
+                "L": [
+                  [
+                    "M",
+                    41
+                  ],
+                  [
+                    "N",
+                    52
+                  ],
+                  [
+                    "O",
+                    9
+                  ],
+                  [
+                    "P",
+                    9
+                  ],
+                  [
+                    "Q",
+                    41
+                  ],
+                  [
+                    "R",
+                    77
+                  ],
+                  [
+                    "S",
+                    59
+                  ]
+                ],
+                "M": [
+                  [
+                    "N",
+                    15
+                  ],
+                  [
+                    "O",
+                    33
+                  ],
+                  [
+                    "P",
+                    28
+                  ],
+                  [
+                    "Q",
+                    80
+                  ],
+                  [
+                    "R",
+                    100
+                  ],
+                  [
+                    "S",
+                    70
+                  ]
+                ],
+                "N": [
+                  [
+                    "O",
+                    89
+                  ],
+                  [
+                    "P",
+                    61
+                  ],
+                  [
+                    "Q",
+                    85
+                  ],
+                  [
+                    "R",
+                    46
+                  ],
+                  [
+                    "S",
+                    34
+                  ]
+                ],
+                "O": [
+                  [
+                    "P",
+                    24
+                  ],
+                  [
+                    "Q",
+                    70
+                  ],
+                  [
+                    "R",
+                    27
+                  ],
+                  [
+                    "S",
+                    40
+                  ]
+                ],
+                "P": [
+                  [
+                    "Q",
+                    26
+                  ],
+                  [
+                    "R",
+                    32
+                  ],
+                  [
+                    "S",
+                    47
+                  ]
+                ],
+                "Q": [
+                  [
+                    "R",
+                    11
+                  ],
+                  [
+                    "S",
+                    36
+                  ]
+                ],
+                "R": [
+                  [
+                    "S",
+                    12
+                  ]
+                ],
+                "S": []
+              },
+              "coordenadas": {
+                "A": [
+                  17,
+                  72
+                ],
+                "B": [
+                  97,
+                  8
+                ],
+                "C": [
+                  32,
+                  15
+                ],
+                "D": [
+                  63,
+                  97
+                ],
+                "E": [
+                  57,
+                  60
+                ],
+                "F": [
+                  83,
+                  48
+                ],
+                "G": [
+                  100,
+                  26
+                ],
+                "H": [
+                  12,
+                  62
+                ],
+                "I": [
+                  3,
+                  49
+                ],
+                "J": [
+                  55,
+                  77
+                ],
+                "K": [
+                  97,
+                  98
+                ],
+                "L": [
+                  0,
+                  89
+                ],
+                "M": [
+                  57,
+                  34
+                ],
+                "N": [
+                  92,
+                  29
+                ],
+                "O": [
+                  75,
+                  13
+                ],
+                "P": [
+                  40,
+                  3
+                ],
+                "Q": [
+                  2,
+                  3
+                ],
+                "R": [
+                  83,
+                  69
+                ],
+                "S": [
+                  1,
+                  48
+                ]
+              },
+              "origen": "A"
+            },
+            "ctx": {
+              "error": {}
+            }
+          }
+        ]
+      },
+      "origen_inexistente": {
+        "detail": [
+          {
+            "type": "value_error",
+            "loc": [
+              "body"
+            ],
+            "msg": "Value error, El origen 'Z' no es un nodo del grafo.",
+            "input": {
+              "lista_adyacencia": {
+                "A": [
+                  [
+                    "B",
+                    45
+                  ],
+                  [
+                    "C",
+                    13
+                  ],
+                  [
+                    "D",
+                    27
+                  ],
+                  [
+                    "E",
+                    74
+                  ],
+                  [
+                    "F",
+                    87
+                  ],
+                  [
+                    "G",
+                    56
+                  ],
+                  [
+                    "H",
+                    76
+                  ],
+                  [
+                    "I",
+                    25
+                  ],
+                  [
+                    "J",
+                    64
+                  ],
+                  [
+                    "K",
+                    14
+                  ],
+                  [
+                    "L",
+                    86
+                  ],
+                  [
+                    "M",
+                    50
+                  ],
+                  [
+                    "N",
+                    38
+                  ],
+                  [
+                    "O",
+                    65
+                  ],
+                  [
+                    "P",
+                    64
+                  ],
+                  [
+                    "Q",
+                    3
+                  ],
+                  [
+                    "R",
+                    42
+                  ],
+                  [
+                    "S",
+                    79
+                  ]
+                ],
+                "B": [
+                  [
+                    "C",
+                    52
+                  ],
+                  [
+                    "D",
+                    37
+                  ],
+                  [
+                    "E",
+                    3
+                  ],
+                  [
+                    "F",
+                    21
+                  ],
+                  [
+                    "G",
+                    26
+                  ],
+                  [
+                    "H",
+                    42
+                  ],
+                  [
+                    "I",
+                    73
+                  ],
+                  [
+                    "J",
+                    18
+                  ],
+                  [
+                    "K",
+                    44
+                  ],
+                  [
+                    "L",
+                    55
+                  ],
+                  [
+                    "M",
+                    28
+                  ],
+                  [
+                    "N",
+                    35
+                  ],
+                  [
+                    "O",
+                    87
+                  ],
+                  [
+                    "P",
+                    13
+                  ],
+                  [
+                    "Q",
+                    49
+                  ],
+                  [
+                    "R",
+                    71
+                  ],
+                  [
+                    "S",
+                    45
+                  ]
+                ],
+                "C": [
+                  [
+                    "D",
+                    88
+                  ],
+                  [
+                    "E",
+                    69
+                  ],
+                  [
+                    "F",
+                    63
+                  ],
+                  [
+                    "G",
+                    99
+                  ],
+                  [
+                    "H",
+                    69
+                  ],
+                  [
+                    "I",
+                    31
+                  ],
+                  [
+                    "J",
+                    9
+                  ],
+                  [
+                    "K",
+                    93
+                  ],
+                  [
+                    "L",
+                    6
+                  ],
+                  [
+                    "M",
+                    11
+                  ],
+                  [
+                    "N",
+                    18
+                  ],
+                  [
+                    "O",
+                    22
+                  ],
+                  [
+                    "P",
+                    22
+                  ],
+                  [
+                    "Q",
+                    69
+                  ],
+                  [
+                    "R",
+                    28
+                  ],
+                  [
+                    "S",
+                    35
+                  ]
+                ],
+                "D": [
+                  [
+                    "E",
+                    98
+                  ],
+                  [
+                    "F",
+                    43
+                  ],
+                  [
+                    "G",
+                    77
+                  ],
+                  [
+                    "H",
+                    65
+                  ],
+                  [
+                    "I",
+                    33
+                  ],
+                  [
+                    "J",
+                    48
+                  ],
+                  [
+                    "K",
+                    44
+                  ],
+                  [
+                    "L",
+                    44
+                  ],
+                  [
+                    "M",
+                    15
+                  ],
+                  [
+                    "N",
+                    38
+                  ],
+                  [
+                    "O",
+                    31
+                  ],
+                  [
+                    "P",
+                    78
+                  ],
+                  [
+                    "Q",
+                    100
+                  ],
+                  [
+                    "R",
+                    92
+                  ],
+                  [
+                    "S",
+                    63
+                  ]
+                ],
+                "E": [
+                  [
+                    "F",
+                    18
+                  ],
+                  [
+                    "G",
+                    75
+                  ],
+                  [
+                    "H",
+                    71
+                  ],
+                  [
+                    "I",
+                    99
+                  ],
+                  [
+                    "J",
+                    14
+                  ],
+                  [
+                    "K",
+                    42
+                  ],
+                  [
+                    "L",
+                    6
+                  ],
+                  [
+                    "M",
+                    53
+                  ],
+                  [
+                    "N",
+                    10
+                  ],
+                  [
+                    "O",
+                    49
+                  ],
+                  [
+                    "P",
+                    19
+                  ],
+                  [
+                    "Q",
+                    17
+                  ],
+                  [
+                    "R",
+                    44
+                  ],
+                  [
+                    "S",
+                    15
+                  ]
+                ],
+                "F": [
+                  [
+                    "G",
+                    79
+                  ],
+                  [
+                    "H",
+                    76
+                  ],
+                  [
+                    "I",
+                    49
+                  ],
+                  [
+                    "J",
+                    10
+                  ],
+                  [
+                    "K",
+                    74
+                  ],
+                  [
+                    "L",
+                    71
+                  ],
+                  [
+                    "M",
+                    29
+                  ],
+                  [
+                    "N",
+                    73
+                  ],
+                  [
+                    "O",
+                    11
+                  ],
+                  [
+                    "P",
+                    35
+                  ],
+                  [
+                    "Q",
+                    47
+                  ],
+                  [
+                    "R",
+                    38
+                  ],
+                  [
+                    "S",
+                    73
+                  ]
+                ],
+                "G": [
+                  [
+                    "H",
+                    69
+                  ],
+                  [
+                    "I",
+                    15
+                  ],
+                  [
+                    "J",
+                    59
+                  ],
+                  [
+                    "K",
+                    36
+                  ],
+                  [
+                    "L",
+                    14
+                  ],
+                  [
+                    "M",
+                    6
+                  ],
+                  [
+                    "N",
+                    38
+                  ],
+                  [
+                    "O",
+                    2
+                  ],
+                  [
+                    "P",
+                    79
+                  ],
+                  [
+                    "Q",
+                    86
+                  ],
+                  [
+                    "R",
+                    2
+                  ],
+                  [
+                    "S",
+                    12
+                  ]
+                ],
+                "H": [
+                  [
+                    "I",
+                    53
+                  ],
+                  [
+                    "J",
+                    15
+                  ],
+                  [
+                    "K",
+                    6
+                  ],
+                  [
+                    "L",
+                    25
+                  ],
+                  [
+                    "M",
+                    31
+                  ],
+                  [
+                    "N",
+                    76
+                  ],
+                  [
+                    "O",
+                    54
+                  ],
+                  [
+                    "P",
+                    21
+                  ],
+                  [
+                    "Q",
+                    15
+                  ],
+                  [
+                    "R",
+                    58
+                  ],
+                  [
+                    "S",
+                    22
+                  ]
+                ],
+                "I": [
+                  [
+                    "J",
+                    88
+                  ],
+                  [
+                    "K",
+                    31
+                  ],
+                  [
+                    "L",
+                    21
+                  ],
+                  [
+                    "M",
+                    96
+                  ],
+                  [
+                    "N",
+                    14
+                  ],
+                  [
+                    "O",
+                    56
+                  ],
+                  [
+                    "P",
+                    49
+                  ],
+                  [
+                    "Q",
+                    70
+                  ],
+                  [
+                    "R",
+                    38
+                  ],
+                  [
+                    "S",
+                    71
+                  ]
+                ],
+                "J": [
+                  [
+                    "K",
+                    33
+                  ],
+                  [
+                    "L",
+                    92
+                  ],
+                  [
+                    "M",
+                    62
+                  ],
+                  [
+                    "N",
+                    41
+                  ],
+                  [
+                    "O",
+                    13
+                  ],
+                  [
+                    "P",
+                    27
+                  ],
+                  [
+                    "Q",
+                    84
+                  ],
+                  [
+                    "R",
+                    41
+                  ],
+                  [
+                    "S",
+                    6
+                  ]
+                ],
+                "K": [
+                  [
+                    "L",
+                    4
+                  ],
+                  [
+                    "M",
+                    2
+                  ],
+                  [
+                    "N",
+                    38
+                  ],
+                  [
+                    "O",
+                    93
+                  ],
+                  [
+                    "P",
+                    77
+                  ],
+                  [
+                    "Q",
+                    41
+                  ],
+                  [
+                    "R",
+                    58
+                  ],
+                  [
+                    "S",
+                    51
+                  ]
+                ],
+                "L": [
+                  [
+                    "M",
+                    41
+                  ],
+                  [
+                    "N",
+                    52
+                  ],
+                  [
+                    "O",
+                    9
+                  ],
+                  [
+                    "P",
+                    9
+                  ],
+                  [
+                    "Q",
+                    41
+                  ],
+                  [
+                    "R",
+                    77
+                  ],
+                  [
+                    "S",
+                    59
+                  ]
+                ],
+                "M": [
+                  [
+                    "N",
+                    15
+                  ],
+                  [
+                    "O",
+                    33
+                  ],
+                  [
+                    "P",
+                    28
+                  ],
+                  [
+                    "Q",
+                    80
+                  ],
+                  [
+                    "R",
+                    100
+                  ],
+                  [
+                    "S",
+                    70
+                  ]
+                ],
+                "N": [
+                  [
+                    "O",
+                    89
+                  ],
+                  [
+                    "P",
+                    61
+                  ],
+                  [
+                    "Q",
+                    85
+                  ],
+                  [
+                    "R",
+                    46
+                  ],
+                  [
+                    "S",
+                    34
+                  ]
+                ],
+                "O": [
+                  [
+                    "P",
+                    24
+                  ],
+                  [
+                    "Q",
+                    70
+                  ],
+                  [
+                    "R",
+                    27
+                  ],
+                  [
+                    "S",
+                    40
+                  ]
+                ],
+                "P": [
+                  [
+                    "Q",
+                    26
+                  ],
+                  [
+                    "R",
+                    32
+                  ],
+                  [
+                    "S",
+                    47
+                  ]
+                ],
+                "Q": [
+                  [
+                    "R",
+                    11
+                  ],
+                  [
+                    "S",
+                    36
+                  ]
+                ],
+                "R": [
+                  [
+                    "S",
+                    12
+                  ]
+                ],
+                "S": []
+              },
+              "origen": "Z",
+              "destino": "A"
+            },
+            "ctx": {
+              "error": {}
+            }
+          }
+        ]
+      },
+      "peso_negativo": {
+        "detail": [
+          {
+            "type": "value_error",
+            "loc": [
+              "body"
+            ],
+            "msg": "Value error, La arista A → B tiene peso negativo (-3); los algoritmos requieren pesos ≥ 0.",
+            "input": {
+              "aristas": [
+                [
+                  "A",
+                  "B",
+                  -3
+                ]
+              ],
+              "origen": "A",
+              "destino": "B"
+            },
+            "ctx": {
+              "error": {}
+            }
+          }
+        ]
+      },
+      "tsp_voraz_19_nodos": {
+        "algoritmo": "TSP con heurística voraz (vecino más cercano)",
+        "clase": "Heurística (aproximación polinomial)",
+        "complejidad": "O(n²)",
+        "origen": "A",
+        "destino": null,
+        "num_nodos": 19,
+        "solucion": true,
+        "ruta": [
+          "A",
+          "Q",
+          "R",
+          "G",
+          "O",
+          "L",
+          "K",
+          "M",
+          "C",
+          "J",
+          "S",
+          "E",
+          "B",
+          "P",
+          "H",
+          "I",
+          "N",
+          "D",
+          "F",
+          "A"
+        ],
+        "costo": 346.0,
+        "nodos_recorridos": 19,
+        "operaciones": 342,
+        "tiempo_ms": 0.0177,
+        "memoria_kb": 2.922,
+        "motivo": "Ciclo encontrado con costo 346 (no necesariamente óptimo)."
+      }
+    }
+  }
+}
