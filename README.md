@@ -15,9 +15,10 @@ incluyen además un notebook con el desarrollo de los ejercicios.
 |---|---|---|---|
 | 3 | Operaciones con cadenas y lenguajes | Concatenación, potencia, unión, intersección, diferencia, complemento y clausura de Kleene | [README](Actividad3-Operaciones-Cadenas-Lenguajes/README.md) |
 | 6 | Implementación de AFD y AFND | Evaluadores de autómatas finitos deterministas y no deterministas, con soporte de transiciones λ | [README](Actividad6-Implementación-Cadenas-AFD-AFND-FastAPI/README.md) |
-| 11 | Analizador de complejidad | Escala el backend de la Actividad 6 con un analizador que anota la complejidad Big-O / Big-Ω de un programa línea por línea | [README](Actividad-11-Analizador-De-Complejidad/README.md) |
+| 11 | Analizador de complejidad | Escala el backend de la Actividad 6 con un analizador que anota la complejidad Big-O / Big-Ω de un programa línea por línea | [README](Actividad11-Analizador-De-Complejidad/README.md) |
+| 12 | Algoritmos de búsqueda informada | Búsqueda voraz (Greedy Best-First) y A* sobre grafos ponderados, con heurística euclidiana o por saltos | [README](Actividad12-Algoritmos-De-Búsqueda-Informada-Heurísticos/README.md) |
 
-> Las actividades 6 y 11 se desarrollaron en equipo con Camila Rodriguez Rosas (194100).
+> Las actividades 6, 11 y 12 se desarrollaron en equipo con Camila Rodriguez Rosas (194100).
 
 ### Endpoints por actividad
 
@@ -31,6 +32,7 @@ archivo (`multipart/form-data`) y lo devuelven anotado. Cada API expone además
 | 3 | `/lenguajes/union`, `/lenguajes/interseccion`, `/lenguajes/diferencia`, `/lenguajes/concatenacion`, `/lenguajes/complemento`, `/lenguajes/clausura_kleene` |
 | 6 | `/afd/evaluar`, `/afnd/evaluar` |
 | 11 | `/afd/evaluar`, `/afnd/evaluar`, `/complejidad/peor-caso`, `/complejidad/mejor-caso` |
+| 12 | `/search/greedy`, `/search/star` |
 
 El formato exacto de cada petición y respuesta está en el README de cada actividad.
 
@@ -52,6 +54,10 @@ ActividadN-.../
 La Actividad 11 no tiene `notebooks/`; en su lugar incluye `ejemplos/` (el programa de
 prueba `algoritmos.py` y, en `ejemplos/salida/`, los archivos anotados que devuelve la API)
 e `img/` (la imagen con los algoritmos analizados).
+
+La Actividad 12 tampoco tiene `notebooks/`. Agrega `schemas.py` (esquemas Pydantic de entrada y
+salida), `ejemplos/` (los grafos de prueba, el script `pruebas.py`, que corre todas las pruebas, y
+sus resultados), `img/` (las imágenes de los grafos) y `txt/` (la estructura de los grafos).
 
 La separación entre `core/` y `routers/` permite usar la lógica tanto desde la API
 como directamente desde el notebook.
@@ -92,3 +98,4 @@ superior con `sys.path.append("..")`).
 - **httpx** — requerido por el `TestClient` de FastAPI que usan los notebooks
 - **python-multipart** — recepción de archivos en los endpoints de complejidad (Actividad 11)
 - **`ast`** (biblioteca estándar) — análisis estático del programa recibido en la Actividad 11
+- **`heapq`** (biblioteca estándar) — cola de prioridad de la búsqueda voraz y A* (Actividad 12)
