@@ -12,10 +12,6 @@ Reúne en un solo producto el trabajo de las actividades 3, 6, 11, 12 y 13.
 | Camila Rodriguez Rosas | 194100 |
 | Daniel Peña Cruz | 200818 |
 
-## Requerimientos del reto
-
-![Reto Integrador (Examen parcial #2)](Backend-Unificado/img/Reto%20Integrador%20%28Examen%20parcial%20%232%29.png)
-
 ## Arquitectura
 
 El producto tiene tres capas, repartidas en dos proyectos:
