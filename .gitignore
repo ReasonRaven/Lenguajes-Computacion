@@ -17,3 +17,7 @@ env/
 # Editores
 .vscode/
 .idea/
+
+# Node / Vite (Frontend)
+node_modules/
+dist/
