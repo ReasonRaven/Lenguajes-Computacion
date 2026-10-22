@@ -17,8 +17,30 @@ incluyen además un notebook con el desarrollo de los ejercicios.
 | 6 | Implementación de AFD y AFND | Evaluadores de autómatas finitos deterministas y no deterministas, con soporte de transiciones λ | [README](Actividad6-Implementación-Cadenas-AFD-AFND-FastAPI/README.md) |
 | 11 | Analizador de complejidad | Escala el backend de la Actividad 6 con un analizador que anota la complejidad Big-O / Big-Ω de un programa línea por línea | [README](Actividad11-Analizador-De-Complejidad/README.md) |
 | 12 | Algoritmos de búsqueda informada | Búsqueda voraz (Greedy Best-First) y A* sobre grafos ponderados, con heurística euclidiana o por saltos | [README](Actividad12-Algoritmos-De-Búsqueda-Informada-Heurísticos/README.md) |
+| 13 | Algoritmos P, NP y con heurística | Continúa el backend de la Actividad 12 con Dijkstra, el agente viajero exacto (Held-Karp) y con heurística voraz, y un generador de grafos sintéticos; reporta tiempo, memoria, nodos recorridos y costo | [README](Actividad13-Implementación-De-Algoritmos-P-NP-y-Con-Heurística/README.md) |
+| Checkpoint 1 | Integración de backend: Reto Integrador (Examen parcial #2) | Aplicación web (FastAPI + React) que reúne las actividades 3, 6, 11, 12 y 13 en tres módulos: lenguajes y autómatas, logística y optimización, y benchmark | [README](Checkpoint1-Integración-De-Backend-Reto-Integrador/README.md) |
 
-> Las actividades 6, 11 y 12 se desarrollaron en equipo con Camila Rodriguez Rosas (194100).
+> Las actividades 6, 11, 12 y 13 se desarrollaron en equipo con Camila Rodriguez Rosas (194100).
+
+### Reto Integrador (Examen parcial #2)
+
+Aplicación web para experimentar con autómatas, rutas y complejidad algorítmica, en
+[`Checkpoint1-Integración-De-Backend-Reto-Integrador/`](Checkpoint1-Integración-De-Backend-Reto-Integrador/README.md):
+
+- [`Backend-Unificado/`](Checkpoint1-Integración-De-Backend-Reto-Integrador/Backend-Unificado/README.md) (FastAPI) reúne en una sola API los
+  endpoints de todas las actividades, organizados en tres módulos: lenguajes y autómatas,
+  logística y optimización, y benchmark. Agrega BFS, DFS, Hill-Climbing, la comparación de
+  algoritmos sobre el mismo grafo, un benchmark de algoritmos de ordenamiento y una
+  explicación teórica en cada respuesta.
+- [`Frontend/`](Checkpoint1-Integración-De-Backend-Reto-Integrador/Frontend/README.md) (React + Vite) es la interfaz gráfica: formularios,
+  editor de autómatas, grafos con la ruta resaltada, tablas comparativas y gráficas.
+
+Para usarla: `uvicorn main:app --reload` en `Backend-Unificado/` y, en otra terminal,
+`npm install && npm run dev` en `Frontend/`; luego abrir http://localhost:5173. Las
+carpetas de cada actividad siguen siendo proyectos independientes.
+
+Integrantes: Jonathan Hernández Lazcano (200417), Camila Rodriguez Rosas (194100) y
+Daniel Peña Cruz (200818).
 
 ### Endpoints por actividad
 
@@ -33,6 +55,7 @@ archivo (`multipart/form-data`) y lo devuelven anotado. Cada API expone además
 | 6 | `/afd/evaluar`, `/afnd/evaluar` |
 | 11 | `/afd/evaluar`, `/afnd/evaluar`, `/complejidad/peor-caso`, `/complejidad/mejor-caso` |
 | 12 | `/search/greedy`, `/search/star` |
+| 13 | `/graph/dijkstra`, `/graph/tsp`, `/graph/tsp/greedy`, `/graph/generate`, `/search/greedy`, `/search/star` |
 
 El formato exacto de cada petición y respuesta está en el README de cada actividad.
 
@@ -58,6 +81,10 @@ e `img/` (la imagen con los algoritmos analizados).
 La Actividad 12 tampoco tiene `notebooks/`. Agrega `schemas.py` (esquemas Pydantic de entrada y
 salida), `ejemplos/` (los grafos de prueba, el script `pruebas.py`, que corre todas las pruebas, y
 sus resultados), `img/` (las imágenes de los grafos) y `txt/` (la estructura de los grafos).
+
+La Actividad 13 parte del código de la 12 y sigue la misma organización, sin `img/` ni `txt/`:
+sus grafos de prueba se generan con el propio endpoint `/graph/generate` y quedan en
+`ejemplos/grafos.json`.
 
 La separación entre `core/` y `routers/` permite usar la lógica tanto desde la API
 como directamente desde el notebook.

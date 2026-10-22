@@ -21,3 +21,6 @@ env/
 # Node / Vite (Frontend)
 node_modules/
 dist/
+
+# Variables de entorno (API Keys)
+.env
