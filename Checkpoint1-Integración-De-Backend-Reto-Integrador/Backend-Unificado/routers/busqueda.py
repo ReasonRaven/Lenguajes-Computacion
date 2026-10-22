@@ -26,7 +26,7 @@ def _buscar(body: BusquedaRequest, clave: str, algoritmo: Callable[..., dict]) -
         "origen": body.origen,
         "destino": body.destino,
         "limite_nodos": body.limite_nodos,
-        "explicacion": explicaciones.algoritmo_grafo(clave, resultado, heuristica),
+        **explicaciones.algoritmo_grafo(clave, resultado, heuristica),
     }
 
 

@@ -243,7 +243,7 @@ function Ordenamiento() {
               <li key={r.clave}><strong>{nombreDe(r.clave)}:</strong> {r.explicacion}</li>
             ))}
           </ul>
-          <Explicacion texto={datos.explicacion} />
+          <Explicacion texto={datos.explicacion} ia={datos.explicacion_ia} />
         </div>
       )}
     </>
@@ -356,7 +356,7 @@ function Escalabilidad() {
               </tbody>
             </table>
           </div>
-          <Explicacion texto={datos.explicacion} />
+          <Explicacion texto={datos.explicacion} ia={datos.explicacion_ia} />
         </div>
       )}
     </>
@@ -445,7 +445,7 @@ function Complejidad() {
               </tbody>
             </table>
           </div>
-          <Explicacion texto={datos.explicacion} />
+          <Explicacion texto={datos.explicacion} ia={datos.explicacion_ia} />
           <h4 style={{ marginTop: "1rem" }}>Código anotado</h4>
           <pre className="codigo">{datos.archivo_anotado}</pre>
         </div>

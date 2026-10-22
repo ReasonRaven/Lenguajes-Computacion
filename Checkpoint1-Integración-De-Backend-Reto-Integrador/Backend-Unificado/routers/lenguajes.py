@@ -25,7 +25,7 @@ class ClausuraKleeneRequest(BaseModel):
 def _responder(operacion: str, resultado: list[str], **datos) -> dict:
     return {
         "resultado": resultado,
-        "explicacion": explicaciones.lenguaje(operacion, resultado, **datos),
+        **explicaciones.lenguaje(operacion, resultado, **datos),
     }
 
 

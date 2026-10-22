@@ -427,7 +427,10 @@ function Comparador({ grafo, nodos }) {
               )}
             </div>
           </div>
-          <Explicacion texto={datos.explicacion ?? fila.explicacion} />
+          <Explicacion
+            texto={datos.explicacion ?? fila.explicacion}
+            ia={datos.explicacion_ia ?? fila.explicacion_ia}
+          />
         </div>
       )}
     </>
@@ -498,7 +501,7 @@ function AgenteViajero({ grafo, nodos }) {
                     {r.value.clase} · {r.value.complejidad} · {fmt(r.value.tiempo_ms)} ms ·{" "}
                     {fmt(r.value.memoria_kb, 2)} KB · {r.value.operaciones} operaciones
                   </p>
-                  <Explicacion texto={r.value.explicacion} />
+                  <Explicacion texto={r.value.explicacion} ia={r.value.explicacion_ia} />
                 </>
               )}
             </div>

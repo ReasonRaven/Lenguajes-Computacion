@@ -106,7 +106,7 @@ function Cadenas() {
           <>
             <div className="resultado-grande">{mostrar(datos.resultado)}</div>
             <p className="suave">Longitud: {datos.resultado.length}</p>
-            <Explicacion texto={datos.explicacion} />
+            <Explicacion texto={datos.explicacion} ia={datos.explicacion_ia} />
           </>
         ) : (
           <p className="suave">Elige una operación y presiona «Calcular».</p>
@@ -197,7 +197,7 @@ function Lenguajes() {
           <>
             <p className="suave">{datos.resultado.length} cadena(s):</p>
             <Conjunto elementos={datos.resultado} />
-            <Explicacion texto={datos.explicacion} />
+            <Explicacion texto={datos.explicacion} ia={datos.explicacion_ia} />
           </>
         ) : (
           <p className="suave">Define los lenguajes y presiona «Calcular».</p>
@@ -291,7 +291,7 @@ function Automatas() {
               </article>
             ))}
           </div>
-          <Explicacion texto={datos.explicacion} />
+          <Explicacion texto={datos.explicacion} ia={datos.explicacion_ia} />
         </div>
       )}
     </>

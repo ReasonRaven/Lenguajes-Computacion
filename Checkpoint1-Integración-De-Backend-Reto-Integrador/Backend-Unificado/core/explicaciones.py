@@ -4,10 +4,14 @@ Cada endpoint agrega a su respuesta un campo `explicacion`: un texto que
 describe qué pasó con *esos* datos (el proceso) y la base teórica que lo
 sustenta, para que un usuario no especializado entienda el resultado.
 
-`TEORIA` guarda la base teórica de cada operación o algoritmo; las funciones
-de abajo la combinan con los datos concretos del resultado.
+El texto lo genera un modelo de Google Gemini en el momento (`core/ia.py`) a partir de
+los datos concretos y de `TEORIA`, la base teórica de cada operación o
+algoritmo. Si la IA no está disponible (sin `GEMINI_API_KEY`, sin red, error
+de la API), se usa una plantilla que combina `TEORIA` con los datos. El campo
+`explicacion_ia` indica cuál de los dos se usó.
 """
 
+from core import ia
 from core.automatas import mostrar_cadena
 
 TEORIA: dict[str, str] = {
@@ -89,12 +93,18 @@ def _conjunto(elementos: list[str], maximo: int = 8) -> str:
     return "{" + ", ".join(vistos) + "}"
 
 
+def _explicar(respaldo: str, tarea: str, datos: dict, teoria: str) -> dict:
+    """Pide la explicación a Gemini; si no está disponible, usa la plantilla."""
+    texto = ia.generar(tarea, datos, teoria)
+    return {"explicacion": texto or respaldo, "explicacion_ia": texto is not None}
+
+
 # ---------------------------------------------------------------------------
 # Módulo 1
 # ---------------------------------------------------------------------------
 
 
-def cadena(operacion: str, resultado: str, **datos) -> str:
+def _respaldo_cadena(operacion: str, resultado: str, **datos) -> str:
     if operacion == "concatenar":
         proceso = (
             f"{_cadena(datos['a'])} · {_cadena(datos['b'])} = {_cadena(resultado)} "
@@ -113,19 +123,36 @@ def cadena(operacion: str, resultado: str, **datos) -> str:
     return f"{proceso} {TEORIA[operacion]}"
 
 
-def lenguaje(operacion: str, resultado: list[str], **datos) -> str:
+def cadena(operacion: str, resultado: str, **datos) -> dict:
+    return _explicar(
+        _respaldo_cadena(operacion, resultado, **datos),
+        f"Explica la operación con cadenas '{operacion}'. Una cadena vacía es λ.",
+        {"entrada": datos, "resultado": resultado, "longitud_resultado": len(resultado)},
+        TEORIA[operacion],
+    )
+
+
+def lenguaje(operacion: str, resultado: list[str], **datos) -> dict:
     L, M = datos.get("L", []), datos.get("M")
     entrada = f"L = {_conjunto(L)}" + (f" y M = {_conjunto(M)}" if M is not None else "")
-    proceso = f"Con {entrada} se obtuvieron {len(resultado)} cadena(s): {_conjunto(resultado)}."
-    return f"{proceso} {TEORIA[operacion]}"
+    respaldo = (
+        f"Con {entrada} se obtuvieron {len(resultado)} cadena(s): {_conjunto(resultado)}. "
+        f"{TEORIA[operacion]}"
+    )
+    return _explicar(
+        respaldo,
+        f"Explica la operación con lenguajes '{operacion}'. La cadena vacía \"\" es λ.",
+        {"entrada": datos, "resultado": resultado, "cantidad_resultado": len(resultado)},
+        TEORIA[operacion],
+    )
 
 
 def _tipo_automata(tipo: str) -> str:
     return "AFND-λ" if "λ" in tipo else ("AFND" if tipo.startswith("AFND") else "AFD")
 
 
-def automata_cadena(tipo: str, estado_inicial: str, r: dict) -> str:
-    """Explicación de una sola cadena evaluada."""
+def _respaldo_automata_cadena(tipo: str, estado_inicial: str, r: dict) -> str:
+    """Explicación de plantilla de una sola cadena evaluada."""
     w = _cadena(r["cadena"])
     if tipo == "AFD":
         if r["estado_final_alcanzado"] is None:
@@ -144,7 +171,7 @@ def automata_cadena(tipo: str, estado_inicial: str, r: dict) -> str:
     return f"{w} ∉ L(M): {r['motivo']}"
 
 
-def automata(tipo: str, resultados: list[dict]) -> str:
+def _respaldo_automata(tipo: str, resultados: list[dict]) -> str:
     aceptadas = [_cadena(r["cadena"]) for r in resultados if r["aceptada"]]
     rechazadas = [_cadena(r["cadena"]) for r in resultados if not r["aceptada"]]
     proceso = (
@@ -155,21 +182,58 @@ def automata(tipo: str, resultados: list[dict]) -> str:
     return f"{proceso} {TEORIA[_tipo_automata(tipo)]}"
 
 
+def automata(
+    tipo: str, estado_inicial: str, estados_finales: list[str], resultados: list[dict]
+) -> tuple[dict, list[str]]:
+    """Explicación general y una por cadena, generadas en una sola llamada."""
+    respuesta = ia.generar_json(
+        f"Explica la evaluación de cadenas en un {tipo}. En 'general' resume cuáles se "
+        "aceptaron y cuáles no y por qué; en 'cadenas' explica cada cadena (por qué se "
+        "acepta o se rechaza, mencionando el estado o conjunto de estados alcanzado). "
+        "La cadena vacía \"\" es λ.",
+        {
+            "tipo": tipo,
+            "estado_inicial": estado_inicial,
+            "estados_finales": estados_finales,
+            "resultados": resultados,
+        },
+        TEORIA[_tipo_automata(tipo)],
+        "cadenas",
+        len(resultados),
+    )
+    if respuesta is not None:
+        return {"explicacion": respuesta["general"], "explicacion_ia": True}, respuesta["cadenas"]
+    return (
+        {"explicacion": _respaldo_automata(tipo, resultados), "explicacion_ia": False},
+        [_respaldo_automata_cadena(tipo, estado_inicial, r) for r in resultados],
+    )
+
+
 # ---------------------------------------------------------------------------
 # Módulo 2
 # ---------------------------------------------------------------------------
 
 
-def algoritmo_grafo(clave: str, resultado: dict, heuristica: dict | None = None) -> str:
+def algoritmo_grafo(clave: str, resultado: dict, heuristica: dict | None = None) -> dict:
     proceso = resultado["motivo"]
     if resultado.get("ruta"):
         proceso += f" Ruta: {' → '.join(resultado['ruta'])}."
     if heuristica is not None:
         proceso += f" Heurística usada: {heuristica['formula']}."
-    return f"{proceso} {TEORIA[clave]}"
+    datos = {"resultado": resultado}
+    if heuristica is not None:
+        datos["heuristica"] = heuristica
+    return _explicar(
+        f"{proceso} {TEORIA[clave]}",
+        f"Explica el resultado del algoritmo '{clave}' sobre un grafo: qué ruta o recorrido "
+        "encontró (o por qué no encontró solución), su costo y cómo lo explica la forma de "
+        "trabajar del algoritmo.",
+        datos,
+        TEORIA[clave],
+    )
 
 
-def comparacion(resultado: dict) -> str:
+def _respaldo_comparacion(resultado: dict) -> str:
     tabla = {fila["clave"]: fila for fila in resultado["tabla"]}
     partes = []
     if resultado["mejor"]:
@@ -188,12 +252,37 @@ def comparacion(resultado: dict) -> str:
     if sin_ruta:
         partes.append(f"No llegaron al destino: {', '.join(sin_ruta)}.")
     partes.append(f"El más rápido fue {tabla[resultado['mas_rapido']]['algoritmo']}.")
-    partes.append(
-        "Todos se ejecutaron con el mismo grafo. Dijkstra y A* (con heurística admisible) "
-        "garantizan el costo mínimo; BFS minimiza el número de aristas; DFS, la búsqueda "
-        "voraz y Hill-Climbing son más baratos pero no garantizan el óptimo."
-    )
+    partes.append(_TEORIA_COMPARACION)
     return " ".join(partes)
+
+
+_TEORIA_COMPARACION = (
+    "Todos se ejecutaron con el mismo grafo. Dijkstra y A* (con heurística admisible) "
+    "garantizan el costo mínimo; BFS minimiza el número de aristas; DFS, la búsqueda "
+    "voraz y Hill-Climbing son más baratos pero no garantizan el óptimo."
+)
+
+
+def comparacion(resultado: dict) -> dict:
+    claves = [fila["clave"] for fila in resultado["tabla"]]
+    return _explicar(
+        _respaldo_comparacion(resultado),
+        "Explica la comparación de algoritmos de ruta ejecutados sobre el mismo grafo, "
+        "origen y destino: cuál dio la ruta más barata, cuál fue el más rápido, cuáles no "
+        "llegaron y por qué se comportan así.",
+        resultado,
+        " ".join([_TEORIA_COMPARACION, *(TEORIA[c] for c in claves if c in TEORIA)]),
+    )
+
+
+def generar_grafo(grafo: dict) -> dict:
+    return _explicar(
+        TEORIA["generar"],
+        "Explica el grafo sintético que se acaba de generar: cuántos nodos y aristas tiene, "
+        "su densidad, si es dirigido y para qué sirve la semilla.",
+        {k: v for k, v in grafo.items() if k not in ("lista_adyacencia", "coordenadas")},
+        TEORIA["generar"],
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -201,17 +290,27 @@ def comparacion(resultado: dict) -> str:
 # ---------------------------------------------------------------------------
 
 
-def complejidad(resultado: dict) -> str:
+def complejidad(resultado: dict) -> dict:
     programa = resultado["programa"]
     caso = "peor" if resultado["caso"] == "peor" else "mejor"
-    proceso = (
+    respaldo = (
         f"En el {caso} caso el programa es {programa['complejidad']}: lo determinan "
-        f"{', '.join(programa['funciones_mayor_grado'])}."
+        f"{', '.join(programa['funciones_mayor_grado'])}. {TEORIA['complejidad']}"
     )
-    return f"{proceso} {TEORIA['complejidad']}"
+    return _explicar(
+        respaldo,
+        f"Explica el análisis de complejidad del programa en el {caso} caso: qué complejidad "
+        "total tiene, qué funciones o líneas la determinan y por qué.",
+        {
+            clave: resultado[clave]
+            for clave in ("archivo", "caso", "notacion", "programa", "funciones")
+            if clave in resultado
+        },
+        TEORIA["complejidad"],
+    )
 
 
-def ordenamiento(n: int, resultados: list[dict], ranking: list[str]) -> str:
+def _respaldo_ordenamiento(n: int, resultados: list[dict], ranking: list[str]) -> str:
     por_clave = {r["clave"]: r for r in resultados}
     rapido, lento = por_clave[ranking[0]], por_clave[ranking[-1]]
     proceso = (
@@ -223,7 +322,36 @@ def ordenamiento(n: int, resultados: list[dict], ranking: list[str]) -> str:
     return f"{proceso} {TEORIA['clases']}"
 
 
-def escalabilidad(series: dict[str, list[dict]], nombres: dict[str, str]) -> str:
+def ordenamiento(
+    n: int, distribucion: str, resultados: list[dict], ranking: list[str]
+) -> tuple[dict, list[str]]:
+    """Explicación general y una por algoritmo, generadas en una sola llamada.
+
+    Cada fila de `resultados` trae en `explicacion` la idea del algoritmo, que se usa
+    como respaldo."""
+    respuesta = ia.generar_json(
+        f"Explica la comparación de algoritmos de ordenamiento sobre los mismos {n} "
+        f"elementos (distribución: {distribucion}). En 'general' resume quién fue más rápido "
+        "y más lento y por qué, relacionándolo con su complejidad; en 'algoritmos' explica "
+        "el desempeño medido de cada algoritmo (tiempo, comparaciones, intercambios) según "
+        "cómo trabaja.",
+        {"n": n, "distribucion": distribucion, "ranking": ranking, "resultados": resultados},
+        TEORIA["clases"],
+        "algoritmos",
+        len(resultados),
+    )
+    if respuesta is not None:
+        return (
+            {"explicacion": respuesta["general"], "explicacion_ia": True},
+            respuesta["algoritmos"],
+        )
+    return (
+        {"explicacion": _respaldo_ordenamiento(n, resultados, ranking), "explicacion_ia": False},
+        [r["explicacion"] for r in resultados],
+    )
+
+
+def _respaldo_escalabilidad(series: dict[str, list[dict]], nombres: dict[str, str]) -> str:
     partes = []
     for clave, puntos in series.items():
         if len(puntos) >= 2 and puntos[0]["tiempo_ms"] > 0:
@@ -237,8 +365,23 @@ def escalabilidad(series: dict[str, list[dict]], nombres: dict[str, str]) -> str
         if partes
         else ""
     )
-    return (
-        f"{proceso}Si n se multiplica por c, un algoritmo O(n²) tarda ~c² veces más y uno "
-        f"O(n log n) un poco más de c veces: esa diferencia es la que muestra la gráfica. "
-        f"{TEORIA['clases']}"
+    return f"{proceso}{_TEORIA_ESCALABILIDAD} {TEORIA['clases']}"
+
+
+_TEORIA_ESCALABILIDAD = (
+    "Si n se multiplica por c, un algoritmo O(n²) tarda ~c² veces más y uno "
+    "O(n log n) un poco más de c veces: esa diferencia es la que muestra la gráfica."
+)
+
+
+def escalabilidad(
+    series: dict[str, list[dict]], nombres: dict[str, str], distribucion: str
+) -> dict:
+    return _explicar(
+        _respaldo_escalabilidad(series, nombres),
+        "Explica cómo creció el tiempo de cada algoritmo de ordenamiento al aumentar n "
+        f"(distribución: {distribucion}), comparando el crecimiento observado con el "
+        "esperado por su complejidad.",
+        {"distribucion": distribucion, "nombres": nombres, "series": series},
+        f"{_TEORIA_ESCALABILIDAD} {TEORIA['clases']}",
     )

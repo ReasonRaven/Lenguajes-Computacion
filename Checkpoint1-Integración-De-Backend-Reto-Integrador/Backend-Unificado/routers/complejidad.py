@@ -1,6 +1,7 @@
 from enum import Enum
 
 from fastapi import APIRouter, File, HTTPException, Query, UploadFile
+from fastapi.concurrency import run_in_threadpool
 from fastapi.responses import PlainTextResponse
 
 from core import complejidad as complejidad_ops
@@ -43,7 +44,9 @@ async def _analizar(archivo: UploadFile, caso: str, formato: Formato):
         raise HTTPException(status_code=422, detail=str(error))
 
     if formato is Formato.json:
-        return {**resultado, "explicacion": explicaciones.complejidad(resultado)}
+        # La llamada a Gemini es bloqueante: se hace fuera del event loop.
+        explicacion = await run_in_threadpool(explicaciones.complejidad, resultado)
+        return {**resultado, **explicacion}
     return PlainTextResponse(
         resultado["archivo_anotado"],
         media_type="text/x-python; charset=utf-8",

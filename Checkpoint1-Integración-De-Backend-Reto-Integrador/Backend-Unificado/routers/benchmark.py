@@ -54,6 +54,11 @@ def comparar_ordenamiento(
         )
 
     ranking = [r["clave"] for r in sorted(resultados, key=lambda r: r["tiempo_ms"])]
+    general, por_algoritmo = explicaciones.ordenamiento(
+        len(body.datos), body.origen_datos, resultados, ranking
+    )
+    for r, explicacion in zip(resultados, por_algoritmo):
+        r["explicacion"] = explicacion
     return {
         "n": len(body.datos),
         "distribucion": body.origen_datos,
@@ -61,7 +66,7 @@ def comparar_ordenamiento(
         "datos_ordenados": esperado,
         "resultados": resultados,
         "ranking": ranking,
-        "explicacion": explicaciones.ordenamiento(len(body.datos), resultados, ranking),
+        **general,
     }
 
 
@@ -98,5 +103,5 @@ def escalabilidad(
         "tamanos": body.tamanos,
         "algoritmos": [ordenamiento.metadatos(clave) for clave in body.algoritmos],
         "series": series,
-        "explicacion": explicaciones.escalabilidad(series, nombres),
+        **explicaciones.escalabilidad(series, nombres, body.distribucion),
     }

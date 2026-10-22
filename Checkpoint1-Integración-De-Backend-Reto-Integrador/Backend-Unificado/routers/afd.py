@@ -27,7 +27,9 @@ def evaluar(body: EvaluarAFDRequest) -> dict:
         )
     except AutomataInvalido as error:
         raise HTTPException(status_code=422, detail=str(error))
-    for r in resultado["resultados"]:
-        r["explicacion"] = explicaciones.automata_cadena("AFD", body.estado_inicial, r)
-    resultado["explicacion"] = explicaciones.automata(resultado["tipo"], resultado["resultados"])
-    return resultado
+    general, por_cadena = explicaciones.automata(
+        resultado["tipo"], body.estado_inicial, body.estados_finales, resultado["resultados"]
+    )
+    for r, explicacion in zip(resultado["resultados"], por_cadena):
+        r["explicacion"] = explicacion
+    return {**resultado, **general}

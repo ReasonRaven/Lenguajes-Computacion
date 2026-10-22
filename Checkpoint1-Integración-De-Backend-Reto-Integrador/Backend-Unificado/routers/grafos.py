@@ -53,6 +53,7 @@ def _ejecutar(
     body,
     *args,
     destino: str | None = None,
+    heuristica: dict | None = None,
 ) -> dict:
     resultado, tiempo_ms, memoria_kb = metricas.medir(algoritmo, body.grafo, *args)
     return {
@@ -63,7 +64,7 @@ def _ejecutar(
         "num_nodos": len(body.grafo),
         "tiempo_ms": tiempo_ms,
         "memoria_kb": memoria_kb,
-        "explicacion": explicaciones.algoritmo_grafo(clave, resultado),
+        **explicaciones.algoritmo_grafo(clave, resultado, heuristica),
     }
 
 
@@ -131,7 +132,7 @@ def ruta_hill_climbing(
     """Búsqueda local: desde el nodo actual se mueve al vecino con menor **h(n)**
     solo si mejora. Puede quedarse en un óptimo local sin llegar al destino."""
     h, heuristica = body.calcular_heuristica()
-    respuesta = _ejecutar(
+    return _ejecutar(
         "hill-climbing",
         _info(hill_climbing),
         hill_climbing.hill_climbing,
@@ -140,11 +141,8 @@ def ruta_hill_climbing(
         body.destino,
         h,
         destino=body.destino,
+        heuristica=heuristica,
     )
-    respuesta["explicacion"] = explicaciones.algoritmo_grafo(
-        "hill-climbing", respuesta, heuristica
-    )
-    return respuesta
 
 
 @router.post(
@@ -166,7 +164,7 @@ def comparar(body: Annotated[CompararRequest, Body(openapi_examples=EJEMPLOS_COM
         "num_nodos": len(body.grafo),
         "heuristica": heuristica,
         **resultado,
-        "explicacion": explicaciones.comparacion(resultado),
+        **explicaciones.comparacion(resultado),
     }
 
 
@@ -206,7 +204,5 @@ def generar(body: Annotated[GenerarRequest, Body(openapi_examples=EJEMPLOS_GENER
     """Genera un grafo conexo con un ciclo hamiltoniano garantizado más aristas
     aleatorias según `densidad`. La respuesta se puede enviar tal cual a los otros
     endpoints (agregando `origen`/`destino`)."""
-    return {
-        **generador.generar_grafo(**body.model_dump()),
-        "explicacion": explicaciones.TEORIA["generar"],
-    }
+    grafo = generador.generar_grafo(**body.model_dump())
+    return {**grafo, **explicaciones.generar_grafo(grafo)}

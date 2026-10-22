@@ -170,6 +170,7 @@ class BusquedaResponse(BaseModel):
     S_n: ComplejidadEspacial = Field(..., alias="S(n)")
     traza: list[PasoTraza] = Field(..., description="Nodos en el orden en que se visitaron.")
     explicacion: str = Field(..., description="Proceso y base teórica del resultado.")
+    explicacion_ia: bool = Field(False, description="True si la explicación la generó Gemini.")
 
 
 # ---------------------------------------------------------------------------
@@ -254,6 +255,7 @@ class AlgoritmoResponse(BaseModel):
     )
     motivo: str
     explicacion: str = Field(..., description="Proceso y base teórica del resultado.")
+    explicacion_ia: bool = Field(False, description="True si la explicación la generó Gemini.")
 
 
 class GenerarRequest(BaseModel):
@@ -291,6 +293,7 @@ class GrafoGenerado(BaseModel):
     lista_adyacencia: dict[str, list[tuple[str, int]]]
     coordenadas: dict[str, tuple[int, int]]
     explicacion: str
+    explicacion_ia: bool = Field(False, description="True si la explicación la generó Gemini.")
 
 
 # ---------------------------------------------------------------------------
@@ -370,6 +373,7 @@ class CompararResponse(BaseModel):
     mejor: str | None = Field(..., description="Algoritmo con la ruta de menor costo.")
     mas_rapido: str
     explicacion: str
+    explicacion_ia: bool = Field(False, description="True si la explicación la generó Gemini.")
 
 
 # ---------------------------------------------------------------------------
@@ -452,6 +456,7 @@ class OrdenamientoResponse(BaseModel):
     resultados: list[ResultadoOrden]
     ranking: list[str] = Field(..., description="Claves del más rápido al más lento.")
     explicacion: str
+    explicacion_ia: bool = Field(False, description="True si la explicación la generó Gemini.")
 
 
 class EscalabilidadRequest(BaseModel):
@@ -498,6 +503,7 @@ class EscalabilidadResponse(BaseModel):
         ..., description="Por algoritmo, un punto por tamaño: listo para graficar."
     )
     explicacion: str
+    explicacion_ia: bool = Field(False, description="True si la explicación la generó Gemini.")
 
 
 # ---------------------------------------------------------------------------

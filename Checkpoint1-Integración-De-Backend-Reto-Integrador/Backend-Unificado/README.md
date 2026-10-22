@@ -21,8 +21,11 @@ La arquitectura del producto tiene tres capas. Este proyecto cubre dos:
 - **Cómputo determinista (backend):** los endpoints de esta API.
 - **Capa de interpretación y explicabilidad:** cada respuesta trae un campo
   `explicacion` con el proceso que se siguió con *esos* datos y la base teórica que lo
-  sustenta (`core/explicaciones.py`). En los autómatas, además, cada cadena evaluada trae
-  su propia `explicacion`.
+  sustenta. El texto lo genera **un modelo de Google Gemini en el momento** (`core/ia.py`) a
+  partir de los datos del resultado y de la teoría de `core/explicaciones.py`. En los
+  autómatas, además, cada cadena evaluada trae su propia `explicacion`, y en el benchmark,
+  cada algoritmo. El campo `explicacion_ia` vale `true` si el texto vino de la IA y `false`
+  si se usó la plantilla de respaldo (ver [Explicaciones con IA](#explicaciones-con-ia)).
 - La **interfaz gráfica (frontend)** consume esta API y no forma parte de esta carpeta.
 
 El backend parte del código de las actividades 3, 6, 11, 12 y 13. Las carpetas de esas
@@ -82,12 +85,14 @@ Backend-Unificado/
 ├── main.py            # Crea la app y monta los routers de los 3 módulos
 ├── schemas.py         # Esquemas Pydantic de grafos, comparación y benchmark
 ├── core/              # Lógica pura (sin FastAPI)
-│   ├── explicaciones.py   # Capa de explicabilidad
+│   ├── explicaciones.py   # Capa de explicabilidad (teoría + plantillas de respaldo)
+│   ├── ia.py              # Cliente de Gemini que genera las explicaciones
 │   ├── bfs.py, dfs.py, hill_climbing.py, comparador.py   # Nuevos (módulo 2)
 │   ├── ordenamiento.py    # Nuevo (módulo 3)
 │   └── ...                # Código de las actividades 3, 6, 11, 12 y 13
 ├── routers/           # Endpoints HTTP (benchmark.py es nuevo)
 ├── img/               # Requerimientos del reto
+├── .env.example       # Plantilla de variables de entorno (API Key de Gemini)
 ├── requirements.txt
 └── README.md
 ```
@@ -101,6 +106,34 @@ python3 -m venv .venv
 source .venv/bin/activate                     # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
+# API Key de Gemini para las explicaciones (opcional, ver abajo)
+cp .env.example .env                          # y edita GEMINI_API_KEY
+
 # Documentación interactiva en http://127.0.0.1:8000/docs
 uvicorn main:app --reload
 ```
+
+## Explicaciones con IA
+
+Las explicaciones de "¿Qué pasó y por qué?" las redacta un modelo de Google Gemini con los datos
+concretos de cada operación. El cálculo sigue siendo determinista: la IA solo explica un
+resultado que el backend ya calculó, y se le pide no inventar cifras.
+
+Se configura con variables de entorno en `Backend-Unificado/.env` (se carga al arrancar
+con `python-dotenv`; `.env` está en `.gitignore` y no se sube al repositorio):
+
+| Variable | Valor por defecto | Para qué sirve |
+|---|---|---|
+| `GEMINI_API_KEY` | (vacía) | Tu API Key de Gemini ([Google AI Studio](https://aistudio.google.com/apikey), gratis). Sin ella no se llama a la API |
+| `GEMINI_MODEL` | `gemini-3.5-flash-lite` | Modelo que redacta las explicaciones. Los Flash completos (`gemini-flash-latest`, `gemini-3.8-flash`) a veces responden 503 por alta demanda |
+| `GEMINI_TIMEOUT` | `20` | Segundos máximos de espera por llamada |
+
+`core/ia.py` usa el SDK `openai` contra el endpoint de Gemini compatible con OpenAI
+(`https://generativelanguage.googleapis.com/v1beta/openai/`), por eso `openai` está en
+`requirements.txt`.
+
+Si no hay key o la llamada falla (sin red, cuota agotada, key inválida, timeout), la
+respuesta usa la plantilla predefinida, `explicacion_ia` vale `false` y se registra un
+aviso en la consola de `uvicorn`. Cada petición hace **una sola** llamada al modelo,
+incluso cuando hay una explicación por cadena o por algoritmo, así que las respuestas
+tardan uno o dos segundos más.

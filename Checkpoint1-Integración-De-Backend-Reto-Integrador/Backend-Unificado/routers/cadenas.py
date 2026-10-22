@@ -21,29 +21,27 @@ class PotenciaRequest(BaseModel):
 
 
 @router.post("/concatenar")
-def concatenar(body: ConcatenarRequest) -> dict[str, str]:
+def concatenar(body: ConcatenarRequest) -> dict:
     resultado = cadenas_ops.concatenar(body.a, body.b)
     return {
         "resultado": resultado,
-        "explicacion": explicaciones.cadena("concatenar", resultado, a=body.a, b=body.b),
+        **explicaciones.cadena("concatenar", resultado, a=body.a, b=body.b),
     }
 
 
 @router.post("/unir")
-def unir(body: UnirRequest) -> dict[str, str]:
+def unir(body: UnirRequest) -> dict:
     resultado = cadenas_ops.unir(body.cadenas)
     return {
         "resultado": resultado,
-        "explicacion": explicaciones.cadena("unir", resultado, cadenas=body.cadenas),
+        **explicaciones.cadena("unir", resultado, cadenas=body.cadenas),
     }
 
 
 @router.post("/potencia")
-def potencia(body: PotenciaRequest) -> dict[str, str]:
+def potencia(body: PotenciaRequest) -> dict:
     resultado = cadenas_ops.potencia(body.cadena, body.n)
     return {
         "resultado": resultado,
-        "explicacion": explicaciones.cadena(
-            "potencia", resultado, cadena=body.cadena, n=body.n
-        ),
+        **explicaciones.cadena("potencia", resultado, cadena=body.cadena, n=body.n),
     }
