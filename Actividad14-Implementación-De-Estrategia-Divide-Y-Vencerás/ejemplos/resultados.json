@@ -1,0 +1,303 @@
+{
+  "funcionamiento": {
+    "principales": {
+      "20": {
+        "a": "34159206611257976335",
+        "b": "65618761393031134444",
+        "producto": "2241484827999388784599728275888755382740"
+      },
+      "50": {
+        "a": "84537518538125155331599611956035461374972493891691",
+        "b": "97688279841582050967832912463508013486796671615001",
+        "producto": "8258324768065300545998204568780428481600886258759155735133083348278215615443790144095472076544856691"
+      },
+      "100": {
+        "a": "3772656818117403534322355636784621209629232037629809398495858576014643687942095204109348939557017381",
+        "b": "4061629780720703321023114160867757839946236194641330640440084360134019557021095822005862667332998417",
+        "producto": "15323135284904656029178639265791349238448348860337293032601741852875966431722905110671159427582791031943272823327521043788903905745027441999130100491403158731863835775453649571613194191130596114485877"
+      }
+    },
+    "casos_borde": 10,
+    "aleatorios": 300,
+    "entradas_invalidas": 4
+  },
+  "mediciones": [
+    {
+      "n": 20,
+      "aceleracion_puro": 0.046,
+      "aceleracion_hibrido": 0.717,
+      "ahorro_multiplicaciones": 0.4125,
+      "Tradicional": {
+        "tiempo_ms": 0.0198,
+        "memoria_kb": 0.625,
+        "multiplicaciones": 400,
+        "llamadas_recursivas": 0,
+        "profundidad": 0
+      },
+      "Karatsuba puro": {
+        "tiempo_ms": 0.4259,
+        "memoria_kb": 2.094,
+        "multiplicaciones": 235,
+        "llamadas_recursivas": 352,
+        "profundidad": 6
+      },
+      "Karatsuba híbrido": {
+        "tiempo_ms": 0.0276,
+        "memoria_kb": 1.633,
+        "multiplicaciones": 300,
+        "llamadas_recursivas": 4,
+        "profundidad": 1
+      }
+    },
+    {
+      "n": 50,
+      "aceleracion_puro": 0.069,
+      "aceleracion_hibrido": 0.892,
+      "ahorro_multiplicaciones": 0.594,
+      "Tradicional": {
+        "tiempo_ms": 0.1282,
+        "memoria_kb": 1.562,
+        "multiplicaciones": 2500,
+        "llamadas_recursivas": 0,
+        "profundidad": 0
+      },
+      "Karatsuba puro": {
+        "tiempo_ms": 1.8693,
+        "memoria_kb": 4.609,
+        "multiplicaciones": 1015,
+        "llamadas_recursivas": 1522,
+        "profundidad": 8
+      },
+      "Karatsuba híbrido": {
+        "tiempo_ms": 0.1438,
+        "memoria_kb": 4.172,
+        "multiplicaciones": 1471,
+        "llamadas_recursivas": 13,
+        "profundidad": 2
+      }
+    },
+    {
+      "n": 100,
+      "aceleracion_puro": 0.091,
+      "aceleracion_hibrido": 1.124,
+      "ahorro_multiplicaciones": 0.7079,
+      "Tradicional": {
+        "tiempo_ms": 0.4928,
+        "memoria_kb": 3.125,
+        "multiplicaciones": 10000,
+        "llamadas_recursivas": 0,
+        "profundidad": 0
+      },
+      "Karatsuba puro": {
+        "tiempo_ms": 5.4246,
+        "memoria_kb": 8.266,
+        "multiplicaciones": 2921,
+        "llamadas_recursivas": 4381,
+        "profundidad": 9
+      },
+      "Karatsuba híbrido": {
+        "tiempo_ms": 0.4385,
+        "memoria_kb": 8.188,
+        "multiplicaciones": 4274,
+        "llamadas_recursivas": 40,
+        "profundidad": 3
+      }
+    },
+    {
+      "n": 200,
+      "aceleracion_puro": 0.115,
+      "aceleracion_hibrido": 1.35,
+      "ahorro_multiplicaciones": 0.777,
+      "Tradicional": {
+        "tiempo_ms": 1.9127,
+        "memoria_kb": 6.25,
+        "multiplicaciones": 40000,
+        "llamadas_recursivas": 0,
+        "profundidad": 0
+      },
+      "Karatsuba puro": {
+        "tiempo_ms": 16.693,
+        "memoria_kb": 16.391,
+        "multiplicaciones": 8919,
+        "llamadas_recursivas": 13378,
+        "profundidad": 10
+      },
+      "Karatsuba híbrido": {
+        "tiempo_ms": 1.4173,
+        "memoria_kb": 16.375,
+        "multiplicaciones": 13081,
+        "llamadas_recursivas": 121,
+        "profundidad": 4
+      }
+    },
+    {
+      "n": 500,
+      "aceleracion_puro": 0.193,
+      "aceleracion_hibrido": 2.134,
+      "ahorro_multiplicaciones": 0.8525,
+      "Tradicional": {
+        "tiempo_ms": 13.486,
+        "memoria_kb": 15.625,
+        "multiplicaciones": 250000,
+        "llamadas_recursivas": 0,
+        "profundidad": 0
+      },
+      "Karatsuba puro": {
+        "tiempo_ms": 69.9952,
+        "memoria_kb": 42.398,
+        "multiplicaciones": 36869,
+        "llamadas_recursivas": 55303,
+        "profundidad": 11
+      },
+      "Karatsuba híbrido": {
+        "tiempo_ms": 6.3201,
+        "memoria_kb": 41.797,
+        "multiplicaciones": 59260,
+        "llamadas_recursivas": 463,
+        "profundidad": 6
+      }
+    },
+    {
+      "n": 1000,
+      "aceleracion_puro": 0.266,
+      "aceleracion_hibrido": 2.885,
+      "ahorro_multiplicaciones": 0.8894,
+      "Tradicional": {
+        "tiempo_ms": 55.9768,
+        "memoria_kb": 31.25,
+        "multiplicaciones": 1000000,
+        "llamadas_recursivas": 0,
+        "profundidad": 0
+      },
+      "Karatsuba puro": {
+        "tiempo_ms": 210.2079,
+        "memoria_kb": 83.727,
+        "multiplicaciones": 110635,
+        "llamadas_recursivas": 165952,
+        "profundidad": 12
+      },
+      "Karatsuba híbrido": {
+        "tiempo_ms": 19.4037,
+        "memoria_kb": 82.141,
+        "multiplicaciones": 177485,
+        "llamadas_recursivas": 1438,
+        "profundidad": 7
+      }
+    },
+    {
+      "n": 2000,
+      "aceleracion_puro": 0.358,
+      "aceleracion_hibrido": 3.879,
+      "ahorro_multiplicaciones": 0.9168,
+      "Tradicional": {
+        "tiempo_ms": 226.478,
+        "memoria_kb": 62.5,
+        "multiplicaciones": 4000000,
+        "llamadas_recursivas": 0,
+        "profundidad": 0
+      },
+      "Karatsuba puro": {
+        "tiempo_ms": 633.3386,
+        "memoria_kb": 168.469,
+        "multiplicaciones": 332797,
+        "llamadas_recursivas": 499195,
+        "profundidad": 13
+      },
+      "Karatsuba híbrido": {
+        "tiempo_ms": 58.3874,
+        "memoria_kb": 165.023,
+        "multiplicaciones": 532492,
+        "llamadas_recursivas": 4276,
+        "profundidad": 8
+      }
+    }
+  ],
+  "exponentes": {
+    "Tradicional": {
+      "multiplicaciones": 2.0,
+      "tiempo": 2.058
+    },
+    "Karatsuba puro": {
+      "multiplicaciones": 1.573,
+      "tiempo": 1.586
+    },
+    "Karatsuba híbrido": {
+      "multiplicaciones": 1.619,
+      "tiempo": 1.632
+    }
+  },
+  "umbrales": [
+    {
+      "umbral": 1,
+      "tiempo_ms": 208.5209,
+      "memoria_kb": 83.727,
+      "multiplicaciones": 110635,
+      "llamadas_recursivas": 165952,
+      "profundidad": 12
+    },
+    {
+      "umbral": 2,
+      "tiempo_ms": 91.3163,
+      "memoria_kb": 82.25,
+      "multiplicaciones": 104128,
+      "llamadas_recursivas": 52921,
+      "profundidad": 10
+    },
+    {
+      "umbral": 4,
+      "tiempo_ms": 45.5864,
+      "memoria_kb": 82.141,
+      "multiplicaciones": 109821,
+      "llamadas_recursivas": 16885,
+      "profundidad": 9
+    },
+    {
+      "umbral": 8,
+      "tiempo_ms": 26.763,
+      "memoria_kb": 82.141,
+      "multiplicaciones": 134749,
+      "llamadas_recursivas": 5137,
+      "profundidad": 8
+    },
+    {
+      "umbral": 16,
+      "tiempo_ms": 19.2135,
+      "memoria_kb": 82.141,
+      "multiplicaciones": 177485,
+      "llamadas_recursivas": 1438,
+      "profundidad": 7
+    },
+    {
+      "umbral": 32,
+      "tiempo_ms": 17.427,
+      "memoria_kb": 82.141,
+      "multiplicaciones": 239327,
+      "llamadas_recursivas": 388,
+      "profundidad": 6
+    },
+    {
+      "umbral": 64,
+      "tiempo_ms": 18.7191,
+      "memoria_kb": 82.141,
+      "multiplicaciones": 318860,
+      "llamadas_recursivas": 121,
+      "profundidad": 4
+    },
+    {
+      "umbral": 128,
+      "tiempo_ms": 22.2978,
+      "memoria_kb": 82.141,
+      "multiplicaciones": 424007,
+      "llamadas_recursivas": 40,
+      "profundidad": 3
+    },
+    {
+      "umbral": 256,
+      "tiempo_ms": 29.2542,
+      "memoria_kb": 82.141,
+      "multiplicaciones": 563502,
+      "llamadas_recursivas": 13,
+      "profundidad": 2
+    }
+  ]
+}
