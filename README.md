@@ -5,9 +5,10 @@ Repositorio de tareas y actividades de la materia **Lenguajes de la Computación
 
 **Autor:** Jonathan Hernández Lazcano · No. de cuenta 200417
 
-Cada actividad es un proyecto independiente con su propia API en **FastAPI** y un
-`README.md` propio con la teoría, las peticiones y los resultados. Las actividades 3 y 6
-incluyen además un notebook con el desarrollo de los ejercicios.
+Cada actividad es un proyecto independiente con su propio `README.md` con la teoría,
+las peticiones y los resultados. Las actividades 3 a 14 exponen una API en **FastAPI**; las
+actividades 3 y 6 incluyen además un notebook con el desarrollo de los ejercicios. Las
+actividades 15 y 16 se desarrollan por completo en una libreta de Jupyter, sin API.
 
 ## Actividades
 
@@ -19,9 +20,11 @@ incluyen además un notebook con el desarrollo de los ejercicios.
 | 12 | Algoritmos de búsqueda informada | Búsqueda voraz (Greedy Best-First) y A* sobre grafos ponderados, con heurística euclidiana o por saltos | [README](Actividad12-Algoritmos-De-Búsqueda-Informada-Heurísticos/README.md) |
 | 13 | Algoritmos P, NP y con heurística | Continúa el backend de la Actividad 12 con Dijkstra, el agente viajero exacto (Held-Karp) y con heurística voraz, y un generador de grafos sintéticos; reporta tiempo, memoria, nodos recorridos y costo | [README](Actividad13-Implementación-De-Algoritmos-P-NP-y-Con-Heurística/README.md) |
 | 14 | Divide y vencerás: Karatsuba | Multiplicación de enteros gigantes con Karatsuba recursivo (puro e híbrido) sobre listas de dígitos, comparada contra la multiplicación tradicional; mide T(N) y S(N) con 20, 50, 100 y hasta 2 000 dígitos | [README](Actividad14-Implementación-De-Estrategia-Divide-Y-Vencerás/README.md) |
+| 15 | Programación dinámica: corte de varillas | `CUT_ROD` recursivo, con memoización (top-down) y con tabulación (bottom-up), más la versión extendida que reconstruye los cortes; benchmark de las tres técnicas variando la longitud de la varilla | [README](Actividad15-Implementación-De-Técnicas-De-Programación-Dinámica/README.md) |
+| 16 | Análisis de desempeño de un algoritmo paralelo | Simulación meteorológica SPMD con *ghost cells* y `multiprocessing.Pipe`, organizada con la metodología de Foster; mide Tp, aceleración y eficiencia con P ∈ {1, 2, 4, 8} y N = 100 y 500, y discute balanceo de carga y la Ley de Amdahl | [README](Actividad16-Análisis-De-Desempeño-De-Algoritmo-Paralelo/README.md) |
 | Checkpoint 1 | Integración de backend: Reto Integrador (Examen parcial #2) | Aplicación web (FastAPI + React) que reúne las actividades 3, 6, 11, 12 y 13 en tres módulos: lenguajes y autómatas, logística y optimización, y benchmark | [README](Checkpoint1-Integración-De-Backend-Reto-Integrador/README.md) |
 
-> Las actividades 6, 11, 12, 13 y 14 se desarrollaron en equipo con Camila Rodriguez Rosas (194100).
+> Las actividades 6, 11, 12, 13, 14, 15 y 16 se desarrollaron en equipo con Camila Rodriguez Rosas (194100).
 
 ### Reto Integrador (Examen parcial #2)
 
@@ -59,11 +62,12 @@ archivo (`multipart/form-data`) y lo devuelven anotado. Cada API expone además
 | 13 | `/graph/dijkstra`, `/graph/tsp`, `/graph/tsp/greedy`, `/graph/generate`, `/search/greedy`, `/search/star` |
 | 14 | `/multiply/tradicional`, `/multiply/karatsuba`, `/multiply/comparar`, `/multiply/generate` |
 
-El formato exacto de cada petición y respuesta está en el README de cada actividad.
+Las actividades 15 y 16 no exponen endpoints. El formato exacto de cada petición y
+respuesta está en el README de cada actividad.
 
 ## Estructura
 
-Las actividades comparten la misma organización:
+Las actividades con API comparten la misma organización:
 
 ```
 ActividadN-.../
@@ -90,6 +94,9 @@ sus grafos de prueba se generan con el propio endpoint `/graph/generate` y queda
 
 La Actividad 14 sigue la misma organización: `ejemplos/pruebas.py` corre las pruebas de
 funcionamiento y las mediciones, y genera las gráficas de T(N) y S(N) en `img/`.
+
+Las actividades 15 y 16 solo contienen su `README.md` y una libreta con todo el desarrollo:
+`programacion_dinamica.ipynb` (15) y `practica_simulacion_meteorologica.ipynb` (16).
 
 La separación entre `core/` y `routers/` permite usar la lógica tanto desde la API
 como directamente desde el notebook.
@@ -121,6 +128,12 @@ El notebook **no necesita** el servidor levantado: usa el `TestClient` de FastAP
 que llama a los mismos endpoints en memoria (importa `main` desde la carpeta
 superior con `sys.path.append("..")`).
 
+Las actividades 15 y 16 no tienen `requirements.txt`: basta abrir la libreta en Jupyter,
+VS Code o Google Colab y ejecutar todas las celdas. La 15 usa solo la biblioteca estándar
+(el benchmark tarda cerca de 2 minutos); la 16 requiere `numpy`, `pandas` y `matplotlib` y
+usa el contexto `fork` de `multiprocessing`, por lo que corre en macOS y Linux/Colab, pero no
+en Windows.
+
 ## Tecnologías
 
 - **Python 3.10+** (se usa la sintaxis de tipos `X | None`; probado con 3.14)
@@ -132,4 +145,6 @@ superior con `sys.path.append("..")`).
 - **`ast`** (biblioteca estándar) — análisis estático del programa recibido en la Actividad 11
 - **`heapq`** (biblioteca estándar) — cola de prioridad de la búsqueda voraz y A* (Actividad 12)
 - **`tracemalloc`** (biblioteca estándar) — medición de memoria (actividades 13 y 14)
-- **matplotlib** — gráficas de T(N) y S(N) (Actividad 14)
+- **matplotlib** — gráficas de T(N) y S(N) (Actividad 14) y de desempeño (Actividad 16)
+- **`multiprocessing`** (biblioteca estándar) — procesos SPMD comunicados por `Pipe` (Actividad 16)
+- **NumPy** y **pandas** — stencil vectorizado y tablas de resultados (Actividad 16)
