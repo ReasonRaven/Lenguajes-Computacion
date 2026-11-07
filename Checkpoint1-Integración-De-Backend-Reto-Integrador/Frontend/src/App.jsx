@@ -37,7 +37,7 @@ export default function App() {
         <div className="marca">
           <span className="logo" aria-hidden="true">λ</span>
           <div>
-            <h1>Laboratorio de Computación</h1>
+            <h1>AutomataLab</h1>
             <p>Autómatas, rutas y complejidad algorítmica</p>
           </div>
         </div>
