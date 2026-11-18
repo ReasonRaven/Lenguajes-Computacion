@@ -8,7 +8,7 @@ Repositorio de tareas y actividades de la materia **Lenguajes de la Computación
 Cada actividad es un proyecto independiente con su propio `README.md` con la teoría,
 las peticiones y los resultados. Las actividades 3 a 14 exponen una API en **FastAPI**; las
 actividades 3 y 6 incluyen además un notebook con el desarrollo de los ejercicios. Las
-actividades 15 y 16 se desarrollan por completo en una libreta de Jupyter, sin API.
+actividades 15, 16 y 17 se desarrollan por completo en libretas de Jupyter, sin API.
 
 ## Actividades
 
@@ -22,9 +22,10 @@ actividades 15 y 16 se desarrollan por completo en una libreta de Jupyter, sin A
 | 14 | Divide y vencerás: Karatsuba | Multiplicación de enteros gigantes con Karatsuba recursivo (puro e híbrido) sobre listas de dígitos, comparada contra la multiplicación tradicional; mide T(N) y S(N) con 20, 50, 100 y hasta 2 000 dígitos | [README](Actividad14-Implementación-De-Estrategia-Divide-Y-Vencerás/README.md) |
 | 15 | Programación dinámica: corte de varillas | `CUT_ROD` recursivo, con memoización (top-down) y con tabulación (bottom-up), más la versión extendida que reconstruye los cortes; benchmark de las tres técnicas variando la longitud de la varilla | [README](Actividad15-Implementación-De-Técnicas-De-Programación-Dinámica/README.md) |
 | 16 | Análisis de desempeño de un algoritmo paralelo | Simulación meteorológica SPMD con *ghost cells* y `multiprocessing.Pipe`, organizada con la metodología de Foster; mide Tp, aceleración y eficiencia con P ∈ {1, 2, 4, 8} y N = 100 y 500, y discute balanceo de carga y la Ley de Amdahl | [README](Actividad16-Análisis-De-Desempeño-De-Algoritmo-Paralelo/README.md) |
+| 17 | Benchmark Las Vegas vs. Monte Carlo | Primalidad por factorización exacta (Rho de Pollard + división de prueba, Las Vegas) contra Miller-Rabin con k rondas (Monte Carlo); mide tiempo, memoria y % de error con N ∈ {10², 10³, 10⁴, 10⁵} y k ∈ {1, 5, 10, 20, 50}. Incluye además una estimación de π por Monte Carlo | [README](Actividad17-Benchmark-Las-Vegas-VS-Monte-Carlo/README.md) |
 | Checkpoint 1 | Integración de backend: Reto Integrador (Examen parcial #2) | Aplicación web (FastAPI + React) que reúne las actividades 3, 6, 11, 12 y 13 en tres módulos: lenguajes y autómatas, logística y optimización, y benchmark | [README](Checkpoint1-Integración-De-Backend-Reto-Integrador/README.md) |
 
-> Las actividades 6, 11, 12, 13, 14, 15 y 16 se desarrollaron en equipo con Camila Rodriguez Rosas (194100).
+> Las actividades 6, 11, 12, 13, 14, 15, 16 y 17 se desarrollaron en equipo con Camila Rodriguez Rosas (194100).
 
 ### Reto Integrador (Examen parcial #2)
 
@@ -62,7 +63,7 @@ archivo (`multipart/form-data`) y lo devuelven anotado. Cada API expone además
 | 13 | `/graph/dijkstra`, `/graph/tsp`, `/graph/tsp/greedy`, `/graph/generate`, `/search/greedy`, `/search/star` |
 | 14 | `/multiply/tradicional`, `/multiply/karatsuba`, `/multiply/comparar`, `/multiply/generate` |
 
-Las actividades 15 y 16 no exponen endpoints. El formato exacto de cada petición y
+Las actividades 15, 16 y 17 no exponen endpoints. El formato exacto de cada petición y
 respuesta está en el README de cada actividad.
 
 ## Estructura
@@ -98,6 +99,11 @@ funcionamiento y las mediciones, y genera las gráficas de T(N) y S(N) en `img/`
 Las actividades 15 y 16 solo contienen su `README.md` y una libreta con todo el desarrollo:
 `programacion_dinamica.ipynb` (15) y `practica_simulacion_meteorologica.ipynb` (16).
 
+La Actividad 17 contiene la libreta del benchmark, `benchmark_las_vegas_vs_monte_carlo.ipynb`,
+y la libreta `Simulación_Montecarlo.ipynb` (estimación de π), además de los archivos que genera
+el benchmark: las gráficas `grafica_tiempo_vs_N.png`, `grafica_error_vs_k.png` y
+`grafica_variabilidad_lv.png`, y `tabla_comparativa.csv`.
+
 La separación entre `core/` y `routers/` permite usar la lógica tanto desde la API
 como directamente desde el notebook.
 
@@ -128,11 +134,12 @@ El notebook **no necesita** el servidor levantado: usa el `TestClient` de FastAP
 que llama a los mismos endpoints en memoria (importa `main` desde la carpeta
 superior con `sys.path.append("..")`).
 
-Las actividades 15 y 16 no tienen `requirements.txt`: basta abrir la libreta en Jupyter,
+Las actividades 15, 16 y 17 no tienen `requirements.txt`: basta abrir la libreta en Jupyter,
 VS Code o Google Colab y ejecutar todas las celdas. La 15 usa solo la biblioteca estándar
 (el benchmark tarda cerca de 2 minutos); la 16 requiere `numpy`, `pandas` y `matplotlib` y
 usa el contexto `fork` de `multiprocessing`, por lo que corre en macOS y Linux/Colab, pero no
-en Windows.
+en Windows. La 17 requiere `numpy`, `pandas` y `matplotlib` (el benchmark tarda alrededor de
+1 minuto y 15 segundos).
 
 ## Tecnologías
 
@@ -144,7 +151,10 @@ en Windows.
 - **python-multipart** — recepción de archivos en los endpoints de complejidad (Actividad 11)
 - **`ast`** (biblioteca estándar) — análisis estático del programa recibido en la Actividad 11
 - **`heapq`** (biblioteca estándar) — cola de prioridad de la búsqueda voraz y A* (Actividad 12)
-- **`tracemalloc`** (biblioteca estándar) — medición de memoria (actividades 13 y 14)
-- **matplotlib** — gráficas de T(N) y S(N) (Actividad 14) y de desempeño (Actividad 16)
+- **`tracemalloc`** (biblioteca estándar) — medición de memoria (actividades 13, 14 y 17)
+- **matplotlib** — gráficas de T(N) y S(N) (Actividad 14), de desempeño (Actividad 16) y de
+  tiempo y error (Actividad 17)
 - **`multiprocessing`** (biblioteca estándar) — procesos SPMD comunicados por `Pipe` (Actividad 16)
-- **NumPy** y **pandas** — stencil vectorizado y tablas de resultados (Actividad 16)
+- **NumPy** y **pandas** — stencil vectorizado y tablas de resultados (actividades 16 y 17)
+- **`random`** y **`unittest`** (biblioteca estándar) — bases y semillas aleatorias y suite de
+  pruebas contra una criba de Eratóstenes (Actividad 17)
